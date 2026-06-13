@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0e1b2e" />
+<title>Road to MetLife — USMNT World Cup '26 Travel Plan</title>
+<meta name="description" content="A personal, scenario-by-scenario travel plan from Montclair, NJ following Team USA through the 2026 World Cup knockouts." />
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="apple-touch-icon" href="icon-180.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#f3efe4;
+    --paper-2:#ece6d6;
+    --ink:#181410;
+    --ink-soft:#4a4338;
+    --line:#ccc3ad;
+    --red:#c8102e;
+    --navy:#0e1b2e;
+    --navy-2:#16314f;
+    --amber:#9a5b00;
+    --amber-bg:#f6e7c8;
+    --green:#1f6b3a;
+    --shadow:0 1px 0 rgba(0,0,0,.04), 0 8px 24px -16px rgba(20,16,10,.5);
+    --r:14px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Newsreader",Georgia,"Times New Roman",serif;
+    font-size:17px;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    background-image:
+      radial-gradient(rgba(20,16,10,.025) 1px, transparent 1px);
+    background-size:4px 4px;
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--red);color:#fff}
+  a{color:var(--navy-2);text-underline-offset:3px}
+
+  .wrap{max-width:760px;margin:0 auto;padding:0 16px}
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    position:sticky;top:0;z-index:50;
+    background:var(--navy);
+    color:#f3efe4;
+    border-bottom:3px solid var(--red);
+    padding:calc(env(safe-area-inset-top) + 10px) 0 10px;
+  }
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .brand{display:flex;align-items:center;gap:10px;min-width:0}
+  .crest{
+    flex:0 0 auto;width:30px;height:30px;border-radius:7px;
+    background:var(--red);color:#fff;
+    display:grid;place-items:center;
+    font-family:"Anton",sans-serif;font-size:15px;letter-spacing:.5px;
+    box-shadow:inset 0 0 0 2px rgba(255,255,255,.18);
+  }
+  .brand b{font-family:"Anton",sans-serif;font-weight:400;letter-spacing:.4px;font-size:16px;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .verified{
+    font-family:"IBM Plex Mono",monospace;font-size:10.5px;line-height:1.2;
+    text-align:right;color:#b8c6da;letter-spacing:.3px;flex:0 0 auto;
+  }
+  .verified b{display:block;color:#fff;font-weight:600}
+
+  /* ---------- hero ---------- */
+  .hero{padding:26px 0 6px}
+  .kicker{
+    font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:2.5px;
+    text-transform:uppercase;color:var(--red);font-weight:600;margin:0 0 8px;
+  }
+  h1{
+    font-family:"Anton",sans-serif;font-weight:400;
+    font-size:clamp(38px,12vw,64px);line-height:.92;letter-spacing:.5px;
+    text-transform:uppercase;margin:0 0 4px;
+  }
+  h1 .met{color:var(--red)}
+  .sub{color:var(--ink-soft);margin:8px 0 0;font-size:17px}
+  .sub b{color:var(--ink)}
+
+  /* ---------- live status ---------- */
+  .status{
+    margin:18px 0 6px;background:#fff;border:1px solid var(--line);
+    border-left:5px solid var(--green);border-radius:var(--r);
+    padding:14px 16px;box-shadow:var(--shadow);
+  }
+  .status .lab{
+    font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:1.5px;
+    text-transform:uppercase;color:var(--green);font-weight:600;display:flex;align-items:center;gap:7px;
+  }
+  .dot-live{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(31,107,58,.5);animation:pulse 2.2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(31,107,58,.45)}70%{box-shadow:0 0 0 9px rgba(31,107,58,0)}100%{box-shadow:0 0 0 0 rgba(31,107,58,0)}}
+  .status p{margin:8px 0 0;font-size:15.5px}
+  .status .next{margin-top:10px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);display:flex;flex-wrap:wrap;gap:6px}
+  .status .next span{background:var(--paper-2);border:1px solid var(--line);border-radius:6px;padding:3px 8px}
+
+  /* ---------- scenario picker ---------- */
+  .pick-h{font-family:"Anton",sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.5px;font-size:22px;margin:28px 0 4px}
+  .pick-note{color:var(--ink-soft);font-size:14.5px;margin:0 0 14px}
+  .picker{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+  .pick{
+    appearance:none;cursor:pointer;text-align:left;
+    background:#fff;border:1.5px solid var(--line);border-radius:var(--r);
+    padding:12px 12px 13px;color:var(--ink);box-shadow:var(--shadow);
+    transition:transform .12s ease, border-color .12s ease, background .12s ease;
+    display:flex;flex-direction:column;gap:4px;min-height:104px;
+  }
+  .pick:active{transform:scale(.98)}
+  .pick .rank{font-family:"Anton",sans-serif;font-size:30px;line-height:1;letter-spacing:.5px}
+  .pick .ord{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-soft)}
+  .pick .where{font-size:13px;line-height:1.25;color:var(--ink-soft);margin-top:auto}
+  .pick .pill{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.5px;text-transform:uppercase;font-weight:600;align-self:flex-start;border-radius:999px;padding:2px 7px}
+  .pill.possible{background:#e7f0e9;color:var(--green);border:1px solid #bcd9c4}
+  .pill.gone{background:#f0e4e4;color:#8a2020;border:1px solid #ddb9b9}
+  .pick[aria-selected="true"]{border-color:var(--red);background:#fff7f3;transform:translateY(-1px)}
+  .pick[aria-selected="true"] .rank{color:var(--red)}
+  .pick.win .rank{}
+  .pick:focus-visible{outline:3px solid var(--navy-2);outline-offset:2px}
+
+  /* ---------- scenario panel ---------- */
+  .scenario{display:none;margin-top:26px;scroll-margin-top:84px}
+  .scenario.active{display:block;animation:fade .35s ease both}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .sc-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;border-bottom:2px solid var(--ink);padding-bottom:8px}
+  .sc-head h2{font-family:"Anton",sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.4px;font-size:clamp(24px,7vw,34px);line-height:1;margin:0}
+  .sc-head .tag{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.5px;text-transform:uppercase;font-weight:600;border-radius:999px;padding:4px 9px;white-space:nowrap;margin-top:4px}
+  .sc-intro{color:var(--ink-soft);font-size:15.5px;margin:12px 0 0}
+
+  /* ---------- bracket ribbon ---------- */
+  .ribbon-wrap{margin:18px -16px 4px;padding:0 16px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .ribbon{display:flex;align-items:stretch;gap:0;min-width:min-content;padding:6px 0 12px}
+  .stop{flex:0 0 auto;width:96px;text-align:center;position:relative;padding-top:22px}
+  .stop:not(:last-child)::after{content:"";position:absolute;top:31px;left:50%;width:100%;height:2px;background:repeating-linear-gradient(90deg,var(--line) 0 6px,transparent 6px 11px)}
+  .stop .node{position:absolute;top:22px;left:50%;transform:translateX(-50%);width:20px;height:20px;border-radius:50%;background:var(--paper);border:2.5px solid var(--navy);z-index:2}
+  .stop.home .node{background:var(--red);border-color:var(--red)}
+  .stop .rd{font-family:"IBM Plex Mono",monospace;font-size:8.5px;letter-spacing:.5px;text-transform:uppercase;color:var(--ink-soft);margin-top:14px}
+  .stop .ct{font-family:"Anton",sans-serif;font-size:15px;text-transform:uppercase;line-height:1;margin-top:3px}
+  .stop .dt{font-family:"IBM Plex Mono",monospace;font-size:9.5px;color:var(--ink-soft);margin-top:2px}
+  .stop.home .ct{color:var(--red)}
+
+  /* ---------- leg cards ---------- */
+  .legs{margin-top:8px;display:flex;flex-direction:column;gap:14px}
+  details.leg{
+    background:#fff;border:1px solid var(--line);border-radius:var(--r);
+    box-shadow:var(--shadow);overflow:hidden;
+  }
+  details.leg[open]{border-color:var(--navy-2)}
+  .leg > summary{
+    list-style:none;cursor:pointer;padding:14px 15px;display:block;position:relative;
+  }
+  .leg > summary::-webkit-details-marker{display:none}
+  .leg-top{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+  .rd-tag{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:var(--red);font-weight:600}
+  .leg-when{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-soft);text-align:right;white-space:nowrap}
+  .leg-city{font-family:"Anton",sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.4px;font-size:25px;line-height:1;margin:7px 0 2px}
+  .leg-venue{font-size:13.5px;color:var(--ink-soft);font-style:italic}
+  .move{
+    margin-top:11px;background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--red);
+    border-radius:9px;padding:9px 11px;font-size:14.5px;display:flex;gap:9px;align-items:flex-start;
+  }
+  .move .mlab{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.5px;text-transform:uppercase;font-weight:600;color:var(--red);background:#fff;border:1px solid var(--line);border-radius:5px;padding:3px 5px;flex:0 0 auto;margin-top:1px}
+  .move b{color:var(--ink)}
+  .home-badge{display:inline-block;background:var(--red);color:#fff;font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:1px;text-transform:uppercase;font-weight:600;border-radius:5px;padding:3px 7px;vertical-align:middle;margin-left:6px}
+  .chev{margin-top:10px;display:flex;align-items:center;gap:7px;color:var(--ink-soft);font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:1px;text-transform:uppercase}
+  .chev svg{transition:transform .2s ease}
+  .leg[open] .chev svg{transform:rotate(180deg)}
+  .leg[open] .chev .open-t{display:none}
+  .chev .close-t{display:none}
+  .leg[open] .chev .close-t{display:inline}
+
+  /* flags on summary */
+  .flags{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+  .flag{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.3px;border-radius:6px;padding:3px 7px;display:inline-flex;align-items:center;gap:5px}
+  .flag.warn{background:var(--amber-bg);color:var(--amber);border:1px solid #e3c98f}
+  .flag.book{background:#e6edf5;color:var(--navy-2);border:1px solid #b9cce0}
+
+  /* details body */
+  .body{padding:2px 15px 16px;border-top:1px dashed var(--line);margin-top:4px}
+  .opt{margin-top:13px}
+  .opt h4{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.8px;text-transform:uppercase;margin:0 0 5px;color:var(--ink);display:flex;align-items:center;gap:7px}
+  .rec-chip{background:var(--green);color:#fff;font-size:9px;letter-spacing:.5px;border-radius:4px;padding:2px 5px}
+  .alt-chip{background:var(--paper-2);color:var(--ink-soft);font-size:9px;letter-spacing:.5px;border-radius:4px;padding:2px 5px;border:1px solid var(--line)}
+  .opt p{margin:4px 0 0;font-size:14.5px}
+  .specs{list-style:none;margin:13px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:9px;overflow:hidden}
+  .specs li{background:#fff;padding:9px 11px}
+  .specs .k{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.5px;text-transform:uppercase;color:var(--ink-soft);display:block;margin-bottom:2px}
+  .specs .v{font-size:14px;line-height:1.3}
+  .specs li.full{grid-column:1 / -1}
+  .cost{display:inline-flex;gap:2px;vertical-align:middle}
+  .cost i{width:8px;height:13px;border-radius:2px;background:var(--line);display:inline-block;font-style:normal}
+  .cost i.on{background:var(--green)}
+  .stops{margin:11px 0 0;padding-left:0;list-style:none}
+  .stops li{position:relative;padding:5px 0 5px 22px;font-size:14px;border-bottom:1px dashed var(--line)}
+  .stops li:last-child{border-bottom:0}
+  .stops li::before{content:"";position:absolute;left:5px;top:11px;width:7px;height:7px;border-radius:50%;background:var(--navy-2)}
+  .stops .d{font-family:"IBM Plex Mono",monospace;font-size:10px;color:var(--red);text-transform:uppercase;letter-spacing:.5px}
+
+  /* ---------- tickets ---------- */
+  .tickets{margin:30px 0 0;background:var(--navy);color:#eee;border-radius:var(--r);padding:18px 16px;box-shadow:var(--shadow)}
+  .tickets h3{font-family:"Anton",sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.5px;font-size:20px;margin:0;display:flex;align-items:center;gap:9px}
+  .tickets .ic{color:var(--red)}
+  .tickets p{font-size:14px;color:#c3cedd;margin:8px 0 0}
+  .tickets textarea{
+    width:100%;margin-top:12px;background:#0a1422;color:#f3efe4;border:1px solid #28415f;border-radius:10px;
+    padding:12px;font-family:"IBM Plex Mono",monospace;font-size:13px;line-height:1.5;resize:vertical;min-height:120px;
+  }
+  .tickets textarea:focus{outline:2px solid var(--red);outline-offset:1px}
+  .tk-row{display:flex;align-items:center;gap:12px;margin-top:10px;flex-wrap:wrap}
+  .tk-save{appearance:none;cursor:pointer;background:var(--red);color:#fff;border:0;border-radius:9px;padding:10px 18px;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:1px;text-transform:uppercase;font-weight:600}
+  .tk-save:active{transform:scale(.97)}
+  .tk-status{font-family:"IBM Plex Mono",monospace;font-size:11px;color:#8fd3a3}
+
+  /* ---------- footer ---------- */
+  footer{margin:34px 0 calc(env(safe-area-inset-bottom) + 30px);padding-top:18px;border-top:1px solid var(--line);color:var(--ink-soft);font-size:13px}
+  footer h4{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;margin:0 0 7px;color:var(--ink)}
+  footer p{margin:0 0 10px;line-height:1.55}
+  footer ul{margin:0 0 12px;padding-left:18px}
+  footer li{margin:2px 0}
+  .legal{font-size:11.5px;color:#8a8470;font-style:italic}
+
+  @media(max-width:420px){
+    .picker{gap:7px}
+    .pick{padding:10px 9px;min-height:98px}
+    .pick .rank{font-size:26px}
+    .specs{grid-template-columns:1fr}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand">
+      <div class="crest">US</div>
+      <b>Road&nbsp;to&nbsp;MetLife</b>
+    </div>
+    <div class="verified">last verified<b>Jun 13, 2026</b></div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="kicker">USMNT · World Cup '26 · From Montclair, NJ</p>
+    <h1>The Knockout<br>Road&nbsp;Trip<span class="met"> ★</span></h1>
+    <p class="sub">One smart travel plan per bracket scenario — fly-vs-drive, where to base, and one-way rentals — all out of <b>Newark (EWR)</b>, always ending home for the <b>Final at MetLife</b>.</p>
+  </section>
+
+  <section class="status" aria-label="Live status">
+    <div class="lab"><span class="dot-live"></span> Where USA stands</div>
+    <p><b>USA won the opener 4–1 over Paraguay (Jun 12, LA)</b> and sit top of Group D. The group is <b>not yet decided</b> — so all three paths below are still in play.</p>
+    <div class="next">
+      <span>NEXT · Jun 19 · vs Australia · Seattle</span>
+      <span>Jun 25 · vs Türkiye · LA</span>
+    </div>
+  </section>
+
+  <h2 class="pick-h">Pick a finish</h2>
+  <p class="pick-note">How USA finishes Group D sets the entire route. Tap one to see the plan.</p>
+  <div class="picker" role="tablist" aria-label="Group D finish scenarios">
+    <button class="pick win" role="tab" aria-selected="false" aria-controls="sc-win" id="tab-win" data-sc="win">
+      <span class="rank">1st</span>
+      <span class="ord">Win Group D</span>
+      <span class="pill possible">Still possible</span>
+      <span class="where">SF → Seattle → LA → Dallas → home</span>
+    </button>
+    <button class="pick ru" role="tab" aria-selected="false" aria-controls="sc-ru" id="tab-ru" data-sc="ru">
+      <span class="rank">2nd</span>
+      <span class="ord">Runner-up</span>
+      <span class="pill possible">Still possible</span>
+      <span class="where">Dallas → Atlanta → KC → Atlanta → home</span>
+    </button>
+    <button class="pick third" role="tab" aria-selected="false" aria-controls="sc-third" id="tab-third" data-sc="third">
+      <span class="rank">3rd</span>
+      <span class="ord">Third place</span>
+      <span class="pill possible">If qualified</span>
+      <span class="where">Boston / NJ / KC — TBD</span>
+    </button>
+  </div>
+
+  <!-- ============ WIN ============ -->
+  <section class="scenario" id="sc-win" role="tabpanel" aria-labelledby="tab-win">
+    <div class="sc-head">
+      <h2>If USA wins<br>Group&nbsp;D</h2>
+      <span class="tag" style="background:#e7f0e9;color:var(--green);border:1px solid #bcd9c4">Still possible</span>
+    </div>
+    <p class="sc-intro">A West Coast swing. Bay Area → Seattle → LA fall inside 10 days — <b>do not fly home in between.</b> Base out west, then one hop to Dallas, then home for the Final.</p>
+
+    <div class="ribbon-wrap"><div class="ribbon">
+      <div class="stop"><span class="node"></span><div class="rd">R32</div><div class="ct">SF Bay</div><div class="dt">Jul 1</div></div>
+      <div class="stop"><span class="node"></span><div class="rd">R16</div><div class="ct">Seattle</div><div class="dt">Jul 6</div></div>
+      <div class="stop"><span class="node"></span><div class="rd">QF</div><div class="ct">LA</div><div class="dt">Jul 10</div></div>
+      <div class="stop"><span class="node"></span><div class="rd">SF</div><div class="ct">Dallas</div><div class="dt">Jul 14</div></div>
+      <div class="stop home"><span class="node"></span><div class="rd">Final</div><div class="ct">MetLife</div><div class="dt">Jul 19</div></div>
+    </div></div>
+
+    <div class="legs" id="legs-win"></div>
+  </section>
+
+  <!-- ============ RUNNER-UP ============ -->
+  <section class="scenario" id="sc-ru" role="tabpanel" aria-labelledby="tab-ru">
+    <div class="sc-head">
+      <h2>If USA finish<br>Runner-up</h2>
+      <span class="tag" style="background:#e7f0e9;color:var(--green);border:1px solid #bcd9c4">Still possible</span>
+    </div>
+    <p class="sc-intro">A spread-out route with Atlanta as a hub (it hosts both your R16 and semi). Gaps are long enough that sleeping in your own bed between legs makes sense.</p>
+
+    <div class="ribbon-wrap"><div class="ribbon">
+      <div class="stop"><span class="node"></span><div class="rd">R32</div><div class="ct">Dallas</div><div class="dt">Jul 3</div></div>
+      <div class="stop"><span class="node"></span><div class="rd">R16</div><div class="ct">Atlanta</div><div class="dt">Jul 6</div></div>
+      <div class="stop"><span class="node"></span><div class="rd">QF</div><div class="ct">KC</div><div class="dt">Jul 11</div></div>
+      <div class="stop"><span class="node"></span><div class="rd">SF</div><div class="ct">Atlanta</div><div class="dt">Jul 15</div></div>
+      <div class="stop home"><span class="node"></span><div class="rd">Final</div><div class="ct">MetLife</div><div class="dt">Jul 19</div></div>
+    </div></div>
+
+    <div class="legs" id="legs-ru"></div>
+  </section>
+
+  <!-- ============ THIRD ============ -->
+  <section class="scenario" id="sc-third" role="tabpanel" aria-labelledby="tab-third">
+    <div class="sc-head">
+      <h2>If USA finish<br>Third</h2>
+      <span class="tag" style="background:var(--amber-bg);color:var(--amber);border:1px solid #e3c98f">Unresolved — verify live</span>
+    </div>
+    <p class="sc-intro">Third place only advances if USA is among the <b>8 best third-placed teams</b>, and the bracket slot isn't fixed until every group finishes. The Round of 32 lands at <b>one of three venues</b> — and the later rounds branch from whichever it is. Treat this page as a placeholder until it's settled.</p>
+
+    <div class="ribbon-wrap"><div class="ribbon">
+      <div class="stop"><span class="node" style="border-color:var(--amber)"></span><div class="rd">R32</div><div class="ct">Bos?/NJ?/KC?</div><div class="dt">~Jun 30</div></div>
+      <div class="stop"><span class="node" style="border-style:dashed"></span><div class="rd">R16</div><div class="ct">TBD</div><div class="dt">—</div></div>
+      <div class="stop"><span class="node" style="border-style:dashed"></span><div class="rd">QF</div><div class="ct">TBD</div><div class="dt">—</div></div>
+      <div class="stop"><span class="node" style="border-style:dashed"></span><div class="rd">SF</div><div class="ct">TBD</div><div class="dt">—</div></div>
+      <div class="stop home"><span class="node"></span><div class="rd">Final</div><div class="ct">MetLife</div><div class="dt">Jul 19</div></div>
+    </div></div>
+
+    <div class="legs" id="legs-third"></div>
+  </section>
+
+  <!-- ============ TICKETS ============ -->
+  <section class="tickets" id="tickets">
+    <h3><span class="ic">✦</span> My tickets</h3>
+    <p>These plans assume you attend <b>every</b> USA knockout match (R32 → Final). If your tickets only cover certain rounds or venues, note it here and skip the legs you're not attending. Saved on this device only.</p>
+    <textarea id="tk-text" spellcheck="false" placeholder="e.g. Confirmed: R32, R16, QF, SF, Final — follows USA. Seat sections / confirmation #s / who's coming…"></textarea>
+    <div class="tk-row">
+      <button class="tk-save" id="tk-save">Save</button>
+      <span class="tk-status" id="tk-status"></span>
+    </div>
+  </section>
+
+  <footer>
+    <h4>How these plans were built</h4>
+    <p>Drive-vs-fly is chosen per leg from the gap between matches and the geography: short hops and tight turnarounds favor flying; long gaps between far-apart cities favor going home; a genuinely scenic, time-rich leg (Bay Area → Seattle) is worth a one-way rental. Costs are rough sensibilities — <b>budget / mid / splurge</b> — not quotes. July 4 week and mid-July are peak: anything marked <b>book early</b> means it.</p>
+    <h4>Verified anchors · last checked Jun 13, 2026</h4>
+    <ul>
+      <li>USA in Group D; beat Paraguay 4–1 (Jun 12, SoFi/LA); lead the group after MD1.</li>
+      <li>Win path R32: Wed Jul 1, 8pm ET, Levi's Stadium, Santa Clara.</li>
+      <li>Runner-up R32: Fri Jul 3, 2pm ET, AT&T Stadium, Arlington (Dallas).</li>
+      <li>Final: Sun Jul 19, MetLife Stadium, East Rutherford, NJ.</li>
+    </ul>
+    <p class="legal">Schedule, kickoff times and bracket are subject to FIFA and to USA's results. Re-verify the live bracket before booking — especially the Third-place page. This is a personal reference, not affiliated with FIFA or US Soccer.</p>
+  </footer>
+
+</main>
+
+<script>
+/* ---------------- leg data ---------------- */
+const cost = n => `<span class="cost" aria-label="cost ${n} of 3">${[1,2,3].map(i=>`<i class="${i<=n?'on':''}"></i>`).join('')}</span>`;
+
+const DATA = {
+  win: [
+    {
+      rd:"Round of 32", city:"SF Bay Area", when:"Wed Jul 1 · 8:00pm ET", venue:"Levi's Stadium, Santa Clara, CA",
+      move:`<b>Fly EWR → San Jose (SJC) or SFO.</b> This is the start of a 10-day West Coast run — land out west and stay there.`,
+      flags:[["book","Book EWR→Bay flight early"]],
+      body:`
+        <div class="opt"><h4><span class="rec-chip">Get there</span> Fly the long leg</h4>
+        <p>Nonstop EWR→SFO is ~6.5h (United). <b>SJC (San Jose)</b> is closest to Levi's — fewer nonstops but skips the 40-min drive down from SF. Arrive Jun 30 so a night game on the 1st is relaxed.</p></div>
+        <div class="opt"><h4><span class="rec-chip">Car</span> Pick up at the airport</h4>
+        <p>Rent here and <b>keep it</b> — you'll want wheels for the Seattle decision. Stay in <b>Santa Clara / San Jose</b>, not SF city; the stadium is in the South Bay.</p></div>
+        <ul class="specs">
+          <li><span class="k">Airport</span><span class="v">SJC (best) / SFO</span></li>
+          <li><span class="k">Flight</span><span class="v">~6.5h nonstop from EWR</span></li>
+          <li><span class="k">Car</span><span class="v">Yes — pick up, keep it</span></li>
+          <li><span class="k">Nights</span><span class="v">2 · Jun 30–Jul 2, South Bay</span></li>
+          <li class="full"><span class="k">Cost feel</span><span class="v">${cost(2)} Mid — flight is the spend; South Bay hotels reasonable</span></li>
+        </ul>`
+    },
+    {
+      rd:"Round of 16", city:"Seattle", when:"Mon Jul 6 · ~8:00pm ET", venue:"Lumen Field, Seattle, WA",
+      move:`<b>Don't fly home — drive the coast.</b> 5 free days: take a one-way rental up the Pacific Coast over 2–3 days. Prefer time in Seattle? The 2h flight is the easy alt.`,
+      flags:[["warn","5-day gap — the scenic centerpiece"],["book","One-way drop + July 4 lodging: book now"]],
+      body:`
+        <div class="opt"><h4><span class="rec-chip">Recommended</span> One-way rental · scenic coast drive</h4>
+        <p>~800 mi / 13–14h split over three easy days. The drive <em>is</em> the trip — redwoods, the Oregon coast, then Seattle.</p>
+        <ul class="stops">
+          <li><span class="d">Jul 2</span> Bay Area → <b>Redwood Coast</b> (Avenue of the Giants, Eureka), ~5h. Overnight Eureka/Arcata.</li>
+          <li><span class="d">Jul 3–4</span> → <b>Oregon Coast</b> via US-101 (Cannon Beach / Haystack Rock) or <b>Portland</b>, ~6–7h. Overnight.</li>
+          <li><span class="d">Jul 4–5</span> → <b>Seattle</b>, ~3h from Portland. Settle a day before the match.</li>
+        </ul></div>
+        <div class="opt"><h4><span class="alt-chip">Alternative</span> Drop the car, fly up</h4>
+        <p>Return the car in the Bay Area and fly <b>SFO/SJC→SEA ~2.5h</b> (Alaska/Delta/United, frequent). Do this if you'd rather bank 4 nights in Seattle than drive.</p></div>
+        <ul class="specs">
+          <li><span class="k">Airport</span><span class="v">Drive, or SEA (~2.5h)</span></li>
+          <li><span class="k">Car</span><span class="v">One-way SF→SEA (drop fee)</span></li>
+          <li><span class="k">Nights</span><span class="v">2–3 in Seattle + 2 en route</span></li>
+          <li><span class="k">Stay</span><span class="v">Downtown / Pioneer Sq — walk to Lumen</span></li>
+          <li class="full"><span class="k">Cost feel</span><span class="v">${cost(3)} Splurge-ish — one-way fee + July 4 peak Seattle rooms</span></li>
+        </ul>`
+    },
+    {
+      rd:"Quarterfinal", city:"Los Angeles", when:"Fri Jul 10 · 3:00pm ET (noon local)", venue:"SoFi Stadium, Inglewood, CA",
+      move:`<b>Fly SEA → LAX (~2.5h).</b> Driving is 17h — not a question. Frequent nonstops; go down a couple days early.`,
+      flags:[["warn","Noon local kickoff — beat the traffic"]],
+      body:`
+        <div class="opt"><h4><span class="rec-chip">Get there</span> Short flight south</h4>
+        <p>SEA→LAX nonstop ~2.5h, all day long. Base near <b>Inglewood / El Segundo / LAX</b> — SoFi sits right by the airport, so you're close on arrival and for departure.</p></div>
+        <div class="opt"><h4><span class="alt-chip">On the ground</span> Car optional</h4>
+        <p>LA is sprawl, but SoFi has rideshare + the K Line nearby. A rental helps if you'll roam; skip it if you're staying local.</p></div>
+        <ul class="specs">
+          <li><span class="k">Airport</span><span class="v">LAX (walk-distance to SoFi area)</span></li>
+          <li><span class="k">Flight</span><span class="v">~2.5h from SEA</span></li>
+          <li><span class="k">Nights</span><span class="v">3 · near Inglewood/LAX</span></li>
+          <li><span class="k">Car</span><span class="v">Optional</span></li>
+          <li class="full"><span class="k">Cost feel</span><span class="v">${cost(2)} Mid — noon kickoff means an early, low-key match day</span></li>
+        </ul>`
+    },
+    {
+      rd:"Semifinal", city:"Dallas", when:"Tue Jul 14 · 3:00pm ET (2pm local)", venue:"AT&T Stadium, Arlington, TX",
+      move:`<b>Fly LAX → DFW (~3.5h).</b> Last stop before home. Stay in Arlington, right by the stadium.`,
+      flags:[["book","Semi tickets + DFW flight: high demand"]],
+      body:`
+        <div class="opt"><h4><span class="rec-chip">Get there</span> One hop east</h4>
+        <p>LAX→DFW nonstop ~3.5h (American hub) — or Love Field (DAL). Stay in <b>Arlington</b>, between Dallas and Fort Worth, where AT&T Stadium actually is.</p></div>
+        <div class="opt"><h4><span class="alt-chip">Heads up</span> Texas in July</h4>
+        <p>It's brutal outside, but AT&T is climate-controlled with a retractable roof — the match itself is comfortable. Rideshare or drive; Arlington transit is thin.</p></div>
+        <ul class="specs">
+          <li><span class="k">Airport</span><span class="v">DFW (or DAL)</span></li>
+          <li><span class="k">Flight</span><span class="v">~3.5h from LAX</span></li>
+          <li><span class="k">Nights</span><span class="v">2 · Arlington</span></li>
+          <li><span class="k">Car</span><span class="v">Yes (or rideshare)</span></li>
+          <li class="full"><span class="k">Cost feel</span><span class="v">${cost(2)} Mid — then fly DFW→EWR home for recovery</span></li>
+        </ul>`
+    },
+    {
+      rd:"Final", city:"MetLife", when:"Sun Jul 19 · 3:00pm ET", venue:"MetLife Stadium, East Rutherford, NJ", home:true,
+      move:`<b>Home game.</b> Fly DFW→EWR after the semi, sleep in your own bed, recover. No travel — just get to East Rutherford.`,
+      flags:[],
+      body:`
+        <div class="opt"><h4><span class="rec-chip">Match day</span> Just transit</h4>
+        <p>From Montclair, MetLife is ~12 mi / 20–30 min drive. Or take <b>NJ Transit</b> to Secaucus and the game-day Meadowlands rail shuttle. Park-and-walk if you'd rather drive.</p></div>
+        <ul class="specs">
+          <li><span class="k">From home</span><span class="v">~20–30 min</span></li>
+          <li><span class="k">Transit</span><span class="v">Meadowlands rail via Secaucus</span></li>
+          <li><span class="k">Nights</span><span class="v">0 — you're home</span></li>
+          <li><span class="k">Car</span><span class="v">Optional</span></li>
+          <li class="full"><span class="k">Cost feel</span><span class="v">${cost(1)} Just parking or rail fare. ~5 days to recover after Dallas.</span></li>
+        </ul>`
+    }
+  ],
+
+  ru: [
+    {
+      rd:"Round of 32", city:"Dallas", when:"Fri Jul 3 · 2:00pm ET (1pm local)", venue:"AT&T Stadium, Arlington, TX",
+      move:`<b>Fly EWR → DFW (~4h).</b> Arrive Jul 2. Stay in Arlington by the stadium.`,
+      flags:[["book","July 4 weekend flights — book early"]],
+      body:`
+        <div class="opt"><h4><span class="rec-chip">Get there</span> Straight shot</h4>
+        <p>EWR→DFW nonstop ~4h (United/American). 1pm local kickoff in Texas heat, but AT&T is indoor/AC. Stay <b>Arlington</b> near the stadium.</p></div>
+        <ul class="specs">
+          <li><span class="k">Airport</span><span class="v">DFW</span></li>
+          <li><span class="k">Flight</span><span class="v">~4h nonstop from EWR</span></li>
+          <li><span class="k">Nights</span><span class="v">2 · Jul 2–4, Arlington</span></li>
+          <li><span class="k">Car</span><span class="v">Yes (or rideshare)</span></li>
+          <li class="full"><span class="k">Cost feel</span><span class="v">${cost(2)} Mid — July 4 weekend, so lock flights early</span></li>
+        </ul>`
+    },
+    {
+      rd:"Round of 16", city:"Atlanta", when:"Mon Jul 6 · 12:00pm ET", venue:"Mercedes-Benz Stadium, Atlanta, GA",
+      move:`<b>Fly DFW → ATL (~2h).</b> Easy, frequent (Delta hub). Mercedes-Benz is downtown and MARTA-accessible — you may not need a car at all.`,
+      flags:[["warn","Noon kickoff — arrive the day before"]],
+      body:`
+        <div class="opt"><h4><span class="rec-chip">Get there</span> Quick hop east</h4>
+        <p>DFW/DAL→ATL nonstop ~2h, constant departures. Driving is 12h — skip it. Get in Jul 4/5 for a noon match on the 6th.</p></div>
+        <div class="opt"><h4><span class="alt-chip">On the ground</span> No car needed</h4>
+        <p>Stadium is downtown by GWCC/Vine City <b>MARTA</b> stations and walkable from downtown hotels. Stay downtown; skip the rental.</p></div>
+        <ul class="specs">
+          <li><span class="k">Airport</span><span class="v">ATL</span></li>
+          <li><span class="k">Flight</span><span class="v">~2h from DFW</span></li>
+          <li><span class="k">Nights</span><span class="v">2 · downtown Atlanta</span></li>
+          <li><span class="k">Car</span><span class="v">No — MARTA + walk</span></li>
+          <li class="full"><span class="k">Cost feel</span><span class="v">${cost(2)} Mid — note: Atlanta hosts your semi too, so you'll be back</span></li>
+        </ul>`
+    },
+    {
+      rd:"Quarterfinal", city:"Kansas City", when:"Sat Jul 11 · 9:00pm ET (8pm local)", venue:"Arrowhead Stadium, Kansas City, MO",
+      move:`<b>Go home first.</b> 5-day gap, and KC isn't near Atlanta or anything else — fly home to NJ to reset, then fly out to KC.`,
+      flags:[["warn","5-day gap, no geographic cluster"]],
+      body:`
+        <div class="opt"><h4><span class="rec-chip">Recommended</span> Reset at home, then out to KC</h4>
+        <p>Fly <b>ATL→EWR ~2.5h</b> after the R16 (Jul 6/7), home Jul 7–9 (laundry, real bed), then <b>EWR→MCI ~3h</b> on Jul 10 for the Saturday match. KC is a flight from anywhere, so home wins on comfort.</p></div>
+        <div class="opt"><h4><span class="alt-chip">Alternative</span> Stay south</h4>
+        <p>If you'd rather not backtrack, base in Atlanta or take a side trip and fly straight to KC — but there's no travel-time saving, just less time at home.</p></div>
+        <ul class="specs">
+          <li><span class="k">Airport</span><span class="v">MCI (Kansas City)</span></li>
+          <li><span class="k">Flight</span><span class="v">~3h from EWR</span></li>
+          <li><span class="k">Nights</span><span class="v">1–2 · downtown KC / Independence</span></li>
+          <li><span class="k">Car</span><span class="v">Yes — Arrowhead has thin transit</span></li>
+          <li class="full"><span class="k">Cost feel</span><span class="v">${cost(2)} Mid — 8pm Saturday kickoff, big tailgate scene. Get the BBQ.</span></li>
+        </ul>`
+    },
+    {
+      rd:"Semifinal", city:"Atlanta", when:"Wed Jul 15 · 3:00pm ET", venue:"Mercedes-Benz Stadium, Atlanta, GA",
+      move:`<b>Fly KC → ATL (~2h) direct.</b> Only 4 days, and you already know the city — no need to route through home.`,
+      flags:[],
+      body:`
+        <div class="opt"><h4><span class="rec-chip">Get there</span> Straight to Atlanta</h4>
+        <p>MCI→ATL nonstop ~2h. Back downtown — same area as your R16, so you're on familiar ground. A couple of low-key days, then the semi.</p></div>
+        <div class="opt"><h4><span class="alt-chip">Alternative</span> Detour home</h4>
+        <p>Prefer your own bed? KC→EWR→ATL works too, but it's two flights for the same window. Direct is cleaner.</p></div>
+        <ul class="specs">
+          <li><span class="k">Airport</span><span class="v">ATL</span></li>
+          <li><span class="k">Flight</span><span class="v">~2h from MCI</span></li>
+          <li><span class="k">Nights</span><span class="v">2 · downtown Atlanta</span></li>
+          <li><span class="k">Car</span><span class="v">No — MARTA + walk</span></li>
+          <li class="full"><span class="k">Cost feel</span><span class="v">${cost(2)} Mid — then fly ATL→EWR home for the Final</span></li>
+        </ul>`
+    },
+    {
+      rd:"Final", city:"MetLife", when:"Sun Jul 19 · 3:00pm ET", venue:"MetLife Stadium, East Rutherford, NJ", home:true,
+      move:`<b>Home game.</b> Fly ATL→EWR after the semi, recover at home, then just get to East Rutherford.`,
+      flags:[],
+      body:`
+        <div class="opt"><h4><span class="rec-chip">Match day</span> Just transit</h4>
+        <p>From Montclair, MetLife is ~12 mi / 20–30 min drive, or <b>NJ Transit</b> to Secaucus + the Meadowlands game-day shuttle. No lodging, no flights — you're home.</p></div>
+        <ul class="specs">
+          <li><span class="k">From home</span><span class="v">~20–30 min</span></li>
+          <li><span class="k">Transit</span><span class="v">Meadowlands rail via Secaucus</span></li>
+          <li><span class="k">Nights</span><span class="v">0 — you're home</span></li>
+          <li><span class="k">Car</span><span class="v">Optional</span></li>
+          <li class="full"><span class="k">Cost feel</span><span class="v">${cost(1)} Parking or rail. ~4 days to recover after Atlanta.</span></li>
+        </ul>`
+    }
+  ],
+
+  third: [
+    {
+      rd:"Round of 32", city:"Venue TBD", when:"~Jun 30 · time TBD", venue:"Foxborough (Boston) · MetLife (NJ) · or Arrowhead (KC)",
+      move:`<b>Depends on the bracket.</b> A Group-D third-place team can land in one of three R32 slots. Here's the travel read for each — confirm which once qualification is set.`,
+      flags:[["warn","Not fixed until all groups finish"]],
+      body:`
+        <div class="opt"><h4><span class="alt-chip">If</span> Gillette Stadium · Foxborough, MA</h4>
+        <p><b>Drive it.</b> ~215 mi / ~3.5–4h from Montclair up I-95 — take your own car and gear. (Or EWR→BOS ~1.5h + 40-min drive south to Foxborough.) 1 night near Foxborough/Providence.</p></div>
+        <div class="opt"><h4><span class="rec-chip">Best case</span> MetLife · East Rutherford, NJ</h4>
+        <p><b>Home game.</b> No travel — ~20–30 min from Montclair. Same drill as the Final.</p></div>
+        <div class="opt"><h4><span class="alt-chip">If</span> Arrowhead · Kansas City, MO</h4>
+        <p><b>Fly EWR→MCI ~3h</b>, rent a car (thin transit at Arrowhead). 1–2 nights downtown KC.</p></div>
+        <ul class="specs">
+          <li><span class="k">Boston</span><span class="v">Drive ~3.5–4h</span></li>
+          <li><span class="k">MetLife</span><span class="v">Home — no travel</span></li>
+          <li><span class="k">Kansas City</span><span class="v">Fly ~3h + car</span></li>
+          <li><span class="k">Nights</span><span class="v">0–2 depending on venue</span></li>
+          <li class="full"><span class="k">Cost feel</span><span class="v">${cost(2)} Varies — cheapest if it's MetLife, priciest if KC</span></li>
+        </ul>`
+    },
+    {
+      rd:"Round of 16 → Final", city:"Branches from R32", when:"Early–mid July", venue:"Resolve from the live bracket",
+      move:`<b>Hold for now.</b> Every later round depends on which R32 slot USA fills, so there's no single route to lock yet.`,
+      flags:[["book","Re-verify the bracket before booking anything"]],
+      body:`
+        <div class="opt"><h4>What to do</h4>
+        <p>Once USA's third-place qualification and slot are confirmed by FIFA, this path resolves to a fixed sequence of cities — the same way the Win and Runner-up pages already have. Check the official bracket, then I'll fill these legs in with the same fly-vs-drive treatment.</p>
+        <p>Whatever the path, it still ends at <b>MetLife on Jul 19</b> — a home game.</p></div>
+        <ul class="specs">
+          <li class="full"><span class="k">Status</span><span class="v">Awaiting group results + third-place ranking</span></li>
+          <li class="full"><span class="k">Constant</span><span class="v">Final is always MetLife — home, no travel</span></li>
+        </ul>`
+    }
+  ]
+};
+
+/* ---------------- render legs ---------------- */
+const chevSvg = `<svg width="11" height="7" viewBox="0 0 11 7" fill="none"><path d="M1 1l4.5 4.5L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>`;
+function flagHtml(f){return f.map(([t,txt])=>`<span class="flag ${t}">${t==='warn'?'▲':'◷'} ${txt}</span>`).join('')}
+function legHtml(L){
+  return `<details class="leg">
+    <summary>
+      <div class="leg-top"><span class="rd-tag">${L.rd}</span><span class="leg-when">${L.when}</span></div>
+      <div class="leg-city">${L.city}${L.home?'<span class="home-badge">Home</span>':''}</div>
+      <div class="leg-venue">${L.venue}</div>
+      <div class="move"><span class="mlab">Move</span><span>${L.move}</span></div>
+      ${L.flags&&L.flags.length?`<div class="flags">${flagHtml(L.flags)}</div>`:''}
+      <div class="chev">${chevSvg}<span class="open-t">Full plan</span><span class="close-t">Hide</span></div>
+    </summary>
+    <div class="body">${L.body}</div>
+  </details>`;
+}
+for(const k of ['win','ru','third']){
+  document.getElementById('legs-'+k).innerHTML = DATA[k].map(legHtml).join('');
+}
+
+/* ---------------- scenario switching ---------------- */
+const tabs = [...document.querySelectorAll('.pick')];
+const panels = {win:'sc-win', ru:'sc-ru', third:'sc-third'};
+function select(sc, scroll){
+  tabs.forEach(t=>t.setAttribute('aria-selected', t.dataset.sc===sc));
+  Object.entries(panels).forEach(([k,id])=>{
+    document.getElementById(id).classList.toggle('active', k===sc);
+  });
+  if(history.replaceState) history.replaceState(null,'','#'+sc);
+  if(scroll){
+    const el=document.getElementById(panels[sc]);
+    el.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+}
+tabs.forEach(t=>t.addEventListener('click',()=>select(t.dataset.sc,true)));
+const fromHash = (location.hash||'').replace('#','');
+select(['win','ru','third'].includes(fromHash)?fromHash:'win', false);
+
+/* ---------------- tickets ---------------- */
+const TK='wc26_tickets';
+const ta=document.getElementById('tk-text'), st=document.getElementById('tk-status');
+ta.value = localStorage.getItem(TK) || '';
+document.getElementById('tk-save').addEventListener('click',()=>{
+  localStorage.setItem(TK, ta.value);
+  st.textContent='✓ Saved on this device';
+  setTimeout(()=>st.textContent='', 2600);
+});
+
+/* ---------------- service worker ---------------- */
+if('serviceWorker' in navigator){
+  window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+}
+</script>
+</body>
+</html>
