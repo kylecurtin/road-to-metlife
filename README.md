@@ -27,8 +27,8 @@ Single self-contained `public/index.html` (inline CSS/JS, no build step, no back
 # local preview
 cd public && python3 -m http.server 8080   # then open http://localhost:8080
 
-# deploy (Firebase Hosting, project kyle-sandbox24, site road-to-metlife)
+# deploy (Firebase Hosting, project kyle-sandbox24, site world-cup-planner)
 firebase deploy --only hosting
 ```
 
-Live at **https://road-to-metlife.web.app**. Editable "My tickets" notes are saved in `localStorage` on the device only.
+Live at **https://world-cup-planner.web.app**. Editable "My tickets" notes are saved in `localStorage` on the device only.

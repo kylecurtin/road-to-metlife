@@ -1,7 +1,7 @@
 {
-  "name": "Road to MetLife — USMNT WC26 Travel Plan",
-  "short_name": "Road to MetLife",
-  "description": "Scenario-by-scenario World Cup 2026 travel plans from Montclair, NJ following Team USA through the knockouts.",
+  "name": "World Cup Planner — USMNT '26 Travel",
+  "short_name": "World Cup Planner",
+  "description": "Travel plans from Montclair, NJ for Team USA's first two 2026 World Cup knockout games.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

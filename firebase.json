@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "road-to-metlife",
+    "site": "world-cup-planner",
     "public": "public",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "cleanUrls": true,

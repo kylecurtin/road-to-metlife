@@ -1,5 +1,5 @@
 // Offline support that still updates: network-first for the page, cache-first for static assets.
-const CACHE = 'roadtometlife-v3';
+const CACHE = 'worldcupplanner-v4';
 const ASSETS = [
   './',
   './index.html',
@@ -27,13 +27,21 @@ self.addEventListener('fetch', e => {
   const isPage = req.mode === 'navigate' || req.destination === 'document';
 
   if (isPage) {
-    // Network-first: always show the latest page when online, fall back to cache offline.
+    // Network-first with a timeout, falling back to cache so a hung/offline
+    // connection still paints. Only cache a genuinely good page response.
+    const fromCache = () => caches.match(req).then(hit => hit || caches.match('./index.html'));
+    const network = new Promise((resolve, reject) => {
+      const timer = setTimeout(() => reject(new Error('timeout')), 3500);
+      fetch(req).then(res => { clearTimeout(timer); resolve(res); }, err => { clearTimeout(timer); reject(err); });
+    });
     e.respondWith(
-      fetch(req).then(res => {
-        const copy = res.clone();
-        caches.open(CACHE).then(c => c.put('./index.html', copy));
+      network.then(res => {
+        if (res.ok && res.type === 'basic') {
+          const copy = res.clone();
+          caches.open(CACHE).then(c => c.put('./index.html', copy));
+        }
         return res;
-      }).catch(() => caches.match(req).then(hit => hit || caches.match('./index.html')))
+      }).catch(fromCache)
     );
     return;
   }

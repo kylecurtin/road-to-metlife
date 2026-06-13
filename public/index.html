@@ -10,7 +10,7 @@
 <link rel="apple-touch-icon" href="icon-180.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 <style>
   :root{
     --paper:#f3efe4;
@@ -24,13 +24,8 @@
     --amber:#9a5b00;
     --amber-bg:#f6e7c8;
     --green:#1f6b3a;
-    --gold:#ffb81c;
-    --gold-deep:#d99700;
-    --white:#fbfaf6;
     --shadow:0 1px 0 rgba(0,0,0,.04), 0 8px 24px -16px rgba(20,16,10,.5);
     --r:14px;
-    /* tiled star field for dark panels */
-    --stars:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='46'%3E%3Cpath d='M23 7l2.9 6.1 6.6.9-4.8 4.6 1.2 6.7L23 28.9l-5.9 3.3 1.2-6.7-4.8-4.6 6.6-.9z' fill='%23ffffff' fill-opacity='0.05'/%3E%3C/svg%3E");
   }
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
@@ -57,55 +52,36 @@
   .topbar{
     position:sticky;top:0;z-index:50;
     background:var(--navy);
-    background-image:var(--stars);
     color:#f3efe4;
-    border-bottom:none;
+    border-bottom:1px solid rgba(255,255,255,.10);
     padding:calc(env(safe-area-inset-top) + 10px) 0 10px;
   }
-  /* flag-stripe rule under the top bar */
-  .topbar::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;
-    background:repeating-linear-gradient(90deg,var(--red) 0 26px,var(--white) 26px 52px)}
   .topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px}
   .brand{display:flex;align-items:center;gap:10px;min-width:0}
   .crest{
     flex:0 0 auto;width:32px;height:32px;border-radius:8px;
     background:var(--red);color:#fff;
     display:grid;place-items:center;
-    font-family:"Anton",sans-serif;font-size:16px;line-height:1;
-    box-shadow:inset 0 0 0 2px var(--gold);
+    font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:13px;line-height:1;letter-spacing:.5px;
   }
-  .brand b{font-family:"Anton",sans-serif;font-weight:400;letter-spacing:.4px;font-size:16px;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .verified{
-    font-family:"IBM Plex Mono",monospace;font-size:10.5px;line-height:1.2;
-    text-align:right;color:#b8c6da;letter-spacing:.3px;flex:0 0 auto;
-  }
-  .verified b{display:block;color:#fff;font-weight:600}
+  .brand b{font-family:"IBM Plex Mono",monospace;font-weight:600;letter-spacing:1.5px;font-size:12.5px;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
   /* ---------- hero ---------- */
   .hero{
     position:relative;margin:20px 0 8px;padding:26px 22px 30px;
-    background:var(--navy);background-image:var(--stars);
+    background:var(--navy);
     color:#fff;border-radius:18px;overflow:hidden;
     box-shadow:0 16px 34px -20px rgba(14,27,46,.75);
   }
-  .hero::before{content:"";position:absolute;top:-40px;right:-40px;width:170px;height:170px;
-    background:repeating-linear-gradient(135deg,var(--red) 0 13px,transparent 13px 26px);
-    opacity:.16;pointer-events:none}
-  .hero .flagbar{position:absolute;left:0;right:0;bottom:0;height:6px;
-    background:repeating-linear-gradient(90deg,var(--red) 0 22px,var(--white) 22px 44px)}
   .hero > *{position:relative;z-index:1}
   .kicker{
-    font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:2.5px;
-    text-transform:uppercase;color:var(--gold);font-weight:600;margin:0 0 10px;
-    display:flex;align-items:center;gap:8px;
+    font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:2px;
+    text-transform:uppercase;color:#93a4ba;font-weight:500;margin:0 0 12px;
   }
-  .kicker .strs{letter-spacing:1px;color:var(--white);opacity:.85;font-family:"Newsreader",serif}
   h1{
-    font-family:"Anton",sans-serif;font-weight:400;color:#fff;
-    font-size:clamp(38px,12vw,64px);line-height:.92;letter-spacing:.5px;
-    text-transform:uppercase;margin:0 0 4px;text-shadow:0 2px 0 rgba(0,0,0,.18);
+    font-family:"Newsreader",Georgia,serif;font-weight:600;color:#fff;
+    font-size:clamp(28px,7.2vw,42px);line-height:1.04;letter-spacing:-.015em;margin:0 0 8px;
   }
-  h1 .met{color:var(--gold)}
   .sub{color:#c5d0df;margin:10px 0 0;font-size:16.5px}
   .sub b{color:#fff}
 
@@ -119,16 +95,13 @@
     font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:1.5px;
     text-transform:uppercase;color:var(--green);font-weight:600;display:flex;align-items:center;gap:7px;
   }
-  .dot-live{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(31,107,58,.5);animation:pulse 2.2s infinite}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(31,107,58,.45)}70%{box-shadow:0 0 0 9px rgba(31,107,58,0)}100%{box-shadow:0 0 0 0 rgba(31,107,58,0)}}
+  .dot-live{width:8px;height:8px;border-radius:50%;background:var(--green)}
   .status p{margin:8px 0 0;font-size:15.5px}
   .status .next{margin-top:10px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);display:flex;flex-wrap:wrap;gap:6px}
   .status .next span{background:var(--paper-2);border:1px solid var(--line);border-radius:6px;padding:3px 8px}
 
   /* ---------- scenario picker ---------- */
-  .pick-h{font-family:"Anton",sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.5px;font-size:22px;margin:28px 0 4px;display:flex;align-items:center;gap:10px}
-  .pick-h::before{content:"★";color:var(--red);font-family:"Newsreader",serif;font-size:17px;line-height:1}
-  .pick-h::after{content:"";flex:1;height:3px;border-radius:2px;background:repeating-linear-gradient(90deg,var(--red) 0 9px,transparent 9px 18px)}
+  .pick-h{font-family:"Newsreader",Georgia,serif;font-weight:600;letter-spacing:-.01em;font-size:23px;margin:30px 0 4px}
   .pick-note{color:var(--ink-soft);font-size:14.5px;margin:0 0 14px}
   .picker{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
   .pick{
@@ -139,13 +112,14 @@
     display:flex;flex-direction:column;gap:4px;min-height:104px;
   }
   .pick:active{transform:scale(.98)}
-  .pick .rank{font-family:"Anton",sans-serif;font-size:30px;line-height:1;letter-spacing:.5px}
+  .pick .rank{font-family:"Newsreader",Georgia,serif;font-weight:600;font-size:30px;line-height:1}
   .pick .ord{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-soft)}
   .pick .where{font-size:13px;line-height:1.25;color:var(--ink-soft);margin-top:auto}
   .pick .pill{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.5px;text-transform:uppercase;font-weight:600;align-self:flex-start;border-radius:999px;padding:2px 7px}
   .pill.possible{background:#e7f0e9;color:var(--green);border:1px solid #bcd9c4}
   .pill.gone{background:#f0e4e4;color:#8a2020;border:1px solid #ddb9b9}
-  .pick[aria-selected="true"]{border-color:var(--red);background:#fff7f3;transform:translateY(-1px)}
+  .pick:not([aria-selected="true"]){background:#f5f1e7;color:var(--ink-soft)}
+  .pick[aria-selected="true"]{border-color:var(--red);background:#fff;box-shadow:0 0 0 1.5px var(--red),0 10px 22px -14px rgba(200,16,46,.5);transform:translateY(-2px)}
   .pick[aria-selected="true"] .rank{color:var(--red)}
   .pick.win .rank{}
   .pick:focus-visible{outline:3px solid var(--navy-2);outline-offset:2px}
@@ -154,8 +128,8 @@
   .scenario{display:none;margin-top:26px;scroll-margin-top:84px}
   .scenario.active{display:block;animation:fade .35s ease both}
   @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-  .sc-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;border-bottom:3px solid;border-image:linear-gradient(90deg,var(--red),var(--navy) 58%,var(--gold)) 1;padding-bottom:8px}
-  .sc-head h2{font-family:"Anton",sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.4px;font-size:clamp(24px,7vw,34px);line-height:1;margin:0}
+  .sc-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;border-bottom:2px solid var(--ink);padding-bottom:10px}
+  .sc-head h2{font-family:"Newsreader",Georgia,serif;font-weight:600;letter-spacing:-.01em;font-size:clamp(23px,6vw,30px);line-height:1.05;margin:0}
   .sc-head .tag{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.5px;text-transform:uppercase;font-weight:600;border-radius:999px;padding:4px 9px;white-space:nowrap;margin-top:4px}
   .sc-intro{color:var(--ink-soft);font-size:15.5px;margin:12px 0 0}
 
@@ -167,15 +141,15 @@
   .stop .node{position:absolute;top:22px;left:50%;transform:translateX(-50%);width:20px;height:20px;border-radius:50%;background:var(--paper);border:2.5px solid var(--navy);z-index:2}
   .stop.term .node{width:15px;height:15px;top:24px;background:var(--navy);border-color:var(--navy)}
   .stop.term .ct{font-size:12px;color:var(--ink-soft)}
-  .stop.cond .node{background:var(--gold);border-color:var(--gold-deep);box-shadow:0 0 0 3px rgba(255,184,28,.28)}
+  .stop.cond .node{background:var(--paper);border-color:var(--red);box-shadow:0 0 0 3px rgba(200,16,46,.13)}
   .stop .rd{font-family:"IBM Plex Mono",monospace;font-size:8.5px;letter-spacing:.5px;text-transform:uppercase;color:var(--ink-soft);margin-top:14px}
-  .stop .ct{font-family:"Anton",sans-serif;font-size:15px;text-transform:uppercase;line-height:1;margin-top:3px}
+  .stop .ct{font-family:"Newsreader",Georgia,serif;font-weight:600;font-size:15px;line-height:1.05;margin-top:3px}
   .stop .dt{font-family:"IBM Plex Mono",monospace;font-size:9.5px;color:var(--ink-soft);margin-top:2px}
-  .stop.cond .ct{color:var(--gold-deep)}
-  .stop.cond .rd::after{content:" ★";font-size:8px;color:var(--gold-deep)}
-  .stop.cond .dt{color:var(--gold-deep)}
+  .stop.cond .ct{color:var(--red)}
+  .stop.cond .dt{color:var(--red)}
   .ribbon-note{font-size:12.5px;color:var(--ink-soft);margin:0 0 2px;display:flex;gap:7px;align-items:flex-start}
-  .ribbon-note b{color:var(--gold-deep)}
+  .ribbon-note b{color:var(--red)}
+  .ribbon-note .rn-mark{color:var(--red);font-weight:700}
 
   /* ---------- win/lose branch ---------- */
   .branch-h{display:flex;align-items:center;gap:10px;margin:22px 0 2px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--ink-soft)}
@@ -206,7 +180,7 @@
   .leg-top{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
   .rd-tag{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:var(--red);font-weight:600}
   .leg-when{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-soft);text-align:right;white-space:nowrap}
-  .leg-city{font-family:"Anton",sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.4px;font-size:25px;line-height:1;margin:7px 0 2px}
+  .leg-city{font-family:"Newsreader",Georgia,serif;font-weight:600;letter-spacing:-.01em;font-size:24px;line-height:1.05;margin:8px 0 2px}
   .leg-venue{font-size:13.5px;color:var(--ink-soft);font-style:italic}
   .move{
     margin-top:11px;background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--red);
@@ -214,7 +188,7 @@
   }
   .move .mlab{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.5px;text-transform:uppercase;font-weight:600;color:var(--red);background:#fff;border:1px solid var(--line);border-radius:5px;padding:3px 5px;flex:0 0 auto;margin-top:1px}
   .move b{color:var(--ink)}
-  .home-badge{display:inline-block;background:var(--gold);color:#3a2a00;font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:1px;text-transform:uppercase;font-weight:600;border-radius:5px;padding:3px 7px;vertical-align:middle;margin-left:6px;box-shadow:inset 0 0 0 1px var(--gold-deep)}
+  .home-badge{display:inline-block;background:var(--navy);color:#fff;font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:1px;text-transform:uppercase;font-weight:600;border-radius:5px;padding:3px 7px;vertical-align:middle;margin-left:6px}
   .chev{margin-top:10px;display:flex;align-items:center;gap:7px;color:var(--ink-soft);font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:1px;text-transform:uppercase}
   .chev svg{transition:transform .2s ease}
   .leg[open] .chev svg{transform:rotate(180deg)}
@@ -250,10 +224,9 @@
   .stops .d{font-family:"IBM Plex Mono",monospace;font-size:10px;color:var(--red);text-transform:uppercase;letter-spacing:.5px}
 
   /* ---------- tickets ---------- */
-  .tickets{position:relative;margin:30px 0 0;background:var(--navy);background-image:var(--stars);color:#eee;border-radius:var(--r);padding:18px 16px;box-shadow:var(--shadow);overflow:hidden}
-  .tickets::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:repeating-linear-gradient(90deg,var(--red) 0 20px,var(--white) 20px 40px)}
-  .tickets h3{font-family:"Anton",sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.5px;font-size:20px;margin:0;display:flex;align-items:center;gap:9px}
-  .tickets .ic{color:var(--gold)}
+  .tickets{position:relative;margin:30px 0 0;background:var(--navy);color:#eee;border-radius:var(--r);padding:18px 16px;box-shadow:var(--shadow);overflow:hidden}
+  .tickets h3{font-family:"Newsreader",Georgia,serif;font-weight:600;letter-spacing:-.01em;font-size:20px;margin:0;display:flex;align-items:center;gap:9px}
+  .tickets .ic{color:#7f9ab8}
   .tickets p{font-size:14px;color:#c3cedd;margin:8px 0 0}
   .tickets textarea{
     width:100%;margin-top:12px;background:#0a1422;color:#f3efe4;border:1px solid #28415f;border-radius:10px;
@@ -271,7 +244,7 @@
   footer p{margin:0 0 10px;line-height:1.55}
   footer ul{margin:0 0 12px;padding-left:18px}
   footer li{margin:2px 0}
-  .legal{font-size:11.5px;color:#8a8470;font-style:italic}
+  .legal{font-size:11.5px;color:#6f6a58;font-style:italic}
 
   @media(max-width:420px){
     .picker{gap:7px}
@@ -290,21 +263,19 @@
       <div class="crest">US</div>
       <b>World&nbsp;Cup&nbsp;Planner</b>
     </div>
-    <div class="verified">last verified<b>Jun 13, 2026</b></div>
   </div>
 </header>
 
 <main class="wrap">
 
   <section class="hero">
-    <p class="kicker"><span class="strs">★ ★ ★</span> USMNT · World Cup '26 · From Montclair, NJ</p>
-    <h1>Two&nbsp;Games,<br>One&nbsp;Plan<span class="met"> ★</span></h1>
-    <p class="sub">Tickets to USA's <b>first two knockout games</b> — the Round of 32, then the Round of 16 <b>if they advance</b>. Pick a group finish for the plan out of <b>Newark (EWR)</b>, with the move for each way the bracket breaks.</p>
-    <span class="flagbar" aria-hidden="true"></span>
+    <p class="kicker">World Cup 2026 · USMNT</p>
+    <h1>Two knockout games</h1>
+    <p class="sub">Tickets to USA's Round of 32 — and the Round of 16 only if they advance. Planned from Montclair, out of Newark (EWR).</p>
   </section>
 
   <section class="status" aria-label="Live status">
-    <div class="lab"><span class="dot-live"></span> Where USA stands</div>
+    <div class="lab"><span class="dot-live"></span> Where USA stands · as of Jun 13, 2026</div>
     <p><b>USA won the opener 4–1 over Paraguay (Jun 12, LA)</b> and sit top of Group D. The group is <b>not yet decided</b> — so all three paths below are still in play.</p>
     <div class="next">
       <span>NEXT · Jun 19 · vs Australia · Seattle</span>
@@ -313,7 +284,7 @@
   </section>
 
   <h2 class="pick-h">Pick a finish</h2>
-  <p class="pick-note">How USA finishes Group D sets the entire route. Tap one to see the plan.</p>
+  <p class="pick-note">USA's group finish decides everything below — tap one for the plan.</p>
   <div class="picker" role="tablist" aria-label="Group D finish scenarios">
     <button class="pick win" role="tab" aria-selected="false" aria-controls="sc-win" id="tab-win" data-sc="win">
       <span class="rank">1st</span>
@@ -349,7 +320,7 @@
       <div class="stop cond"><span class="node"></span><div class="rd">R16</div><div class="ct">Seattle</div><div class="dt">Jul 6</div></div>
       <div class="stop term"><span class="node"></span><div class="rd">Home</div><div class="ct">Montclair</div><div class="dt">Jul 2 or 7</div></div>
     </div></div>
-    <p class="ribbon-note"><span>★</span><span><b>Seattle only if USA win the Round of 32.</b> Lose it and you fly home from the Bay Area after Game 1.</span></p>
+    <p class="ribbon-note"><span class="rn-mark" aria-hidden="true">›</span><span><b>Seattle only if USA win the Round of 32.</b> Lose it and you fly home from the Bay Area after Game 1.</span></p>
 
     <div class="legs" id="legs-win"></div>
   </section>
@@ -368,7 +339,7 @@
       <div class="stop cond"><span class="node"></span><div class="rd">R16</div><div class="ct">Atlanta</div><div class="dt">Jul 6</div></div>
       <div class="stop term"><span class="node"></span><div class="rd">Home</div><div class="ct">Montclair</div><div class="dt">Jul 4 or 7</div></div>
     </div></div>
-    <p class="ribbon-note"><span>★</span><span><b>Atlanta only if USA win the Round of 32.</b> Lose it and you fly home from Dallas after Game 1.</span></p>
+    <p class="ribbon-note"><span class="rn-mark" aria-hidden="true">›</span><span><b>Atlanta only if USA win the Round of 32.</b> Lose it and you fly home from Dallas after Game 1.</span></p>
 
     <div class="legs" id="legs-ru"></div>
   </section>
@@ -387,15 +358,15 @@
       <div class="stop cond"><span class="node" style="border-style:dashed"></span><div class="rd">R16</div><div class="ct">TBD</div><div class="dt">—</div></div>
       <div class="stop term"><span class="node"></span><div class="rd">Home</div><div class="ct">Montclair</div><div class="dt">early Jul</div></div>
     </div></div>
-    <p class="ribbon-note"><span>★</span><span><b>Both venues unconfirmed.</b> Re-verify the live bracket once USA's group finish and third-place qualification are known.</span></p>
+    <p class="ribbon-note"><span class="rn-mark" aria-hidden="true">›</span><span><b>Both venues unconfirmed.</b> Re-verify the live bracket once USA's group finish and third-place qualification are known.</span></p>
 
     <div class="legs" id="legs-third"></div>
   </section>
 
   <!-- ============ TICKETS ============ -->
   <section class="tickets" id="tickets">
-    <h3><span class="ic">✦</span> My tickets</h3>
-    <p>You have tickets to USA's <b>first two knockout games</b> — the Round of 32, then the Round of 16 <b>if they advance</b>. These follow the team, so the R16 seat is void if USA are knocked out in the R32. Note seat details / confirmations below. Saved on this device only.</p>
+    <h3>My tickets</h3>
+    <p>Seat details, confirmations, and who's coming. Saved on this device only.</p>
     <textarea id="tk-text" spellcheck="false" placeholder="e.g. R32 + R16, follows USA. Sections / confirmation #s / who's coming…"></textarea>
     <div class="tk-row">
       <button class="tk-save" id="tk-save">Save</button>
@@ -405,7 +376,7 @@
 
   <footer>
     <h4>How these plans were built</h4>
-    <p>You hold tickets to USA's <b>first two knockout games</b>, so every scenario branches on the Round-of-32 result: win and there's a second city; lose and it's straight home. Drive-vs-fly is chosen from the gap between the two games and the geography — short hops favor flying, and the one time-rich leg (Bay Area → Seattle) is worth a one-way rental. Costs are rough sensibilities — <b>budget / mid / splurge</b> — not quotes. July 4 week is peak: anything marked <b>book early</b> means it.</p>
+    <p>Drive-vs-fly is chosen per leg from the gap between the two games and the geography — short hops favor flying, and the one time-rich leg (Bay Area → Seattle) is worth a one-way rental. Costs are rough sensibilities — <b>budget / mid / splurge</b> — not quotes. July 4 week is peak: anything marked <b>book early</b> means it.</p>
     <h4>Verified anchors · last checked Jun 13, 2026</h4>
     <ul>
       <li>USA in Group D; beat Paraguay 4–1 (Jun 12, SoFi/LA); lead the group after MD1.</li>
@@ -618,21 +589,39 @@ for(const k of ['win','ru','third']){
 
 /* ---------------- scenario switching ---------------- */
 const tabs = [...document.querySelectorAll('.pick')];
+const order = ['win','ru','third'];
 const panels = {win:'sc-win', ru:'sc-ru', third:'sc-third'};
 function select(sc, scroll){
-  tabs.forEach(t=>t.setAttribute('aria-selected', t.dataset.sc===sc));
+  tabs.forEach(t=>{
+    const on = t.dataset.sc===sc;
+    t.setAttribute('aria-selected', on);
+    t.tabIndex = on ? 0 : -1;            // roving tabindex for the tablist
+  });
   Object.entries(panels).forEach(([k,id])=>{
     document.getElementById(id).classList.toggle('active', k===sc);
   });
-  if(history.replaceState) history.replaceState(null,'','#'+sc);
+  if(history.replaceState && location.hash !== '#'+sc) history.replaceState(null,'','#'+sc);
   if(scroll){
-    const el=document.getElementById(panels[sc]);
-    el.scrollIntoView({behavior:'smooth',block:'start'});
+    document.getElementById(panels[sc]).scrollIntoView({behavior:'smooth',block:'start'});
   }
 }
 tabs.forEach(t=>t.addEventListener('click',()=>select(t.dataset.sc,true)));
+// Arrow-key navigation per the ARIA tabs pattern
+document.querySelector('.picker').addEventListener('keydown',e=>{
+  const i = order.indexOf(document.activeElement.dataset.sc);
+  if(i<0) return;
+  let n=-1;
+  if(e.key==='ArrowRight'||e.key==='ArrowDown') n=(i+1)%order.length;
+  else if(e.key==='ArrowLeft'||e.key==='ArrowUp') n=(i-1+order.length)%order.length;
+  else if(e.key==='Home') n=0;
+  else if(e.key==='End') n=order.length-1;
+  if(n<0) return;
+  e.preventDefault();
+  select(order[n], false);
+  tabs[n].focus();
+});
 const fromHash = (location.hash||'').replace('#','');
-select(['win','ru','third'].includes(fromHash)?fromHash:'win', false);
+select(order.includes(fromHash)?fromHash:'win', false);
 
 /* ---------------- tickets ---------------- */
 const TK='wc26_tickets';
