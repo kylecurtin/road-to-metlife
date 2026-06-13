@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "road-to-metlife",
     "public": "public",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "cleanUrls": true,
