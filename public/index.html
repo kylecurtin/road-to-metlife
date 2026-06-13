@@ -4,8 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="theme-color" content="#0e1b2e" />
-<title>Road to MetLife — USMNT World Cup '26 Travel Plan</title>
-<meta name="description" content="A personal, scenario-by-scenario travel plan from Montclair, NJ following Team USA through the 2026 World Cup knockouts." />
+<title>World Cup Planner — USMNT '26 Travel</title>
+<meta name="description" content="A personal, scenario-by-scenario travel plan from Montclair, NJ for Team USA's first two 2026 World Cup knockout games." />
 <link rel="manifest" href="manifest.webmanifest" />
 <link rel="apple-touch-icon" href="icon-180.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -165,12 +165,32 @@
   .stop{flex:0 0 auto;width:96px;text-align:center;position:relative;padding-top:22px}
   .stop:not(:last-child)::after{content:"";position:absolute;top:31px;left:50%;width:100%;height:2px;background:repeating-linear-gradient(90deg,var(--line) 0 6px,transparent 6px 11px)}
   .stop .node{position:absolute;top:22px;left:50%;transform:translateX(-50%);width:20px;height:20px;border-radius:50%;background:var(--paper);border:2.5px solid var(--navy);z-index:2}
-  .stop.home .node{background:var(--gold);border-color:var(--gold-deep);box-shadow:0 0 0 3px rgba(255,184,28,.28)}
+  .stop.term .node{width:15px;height:15px;top:24px;background:var(--navy);border-color:var(--navy)}
+  .stop.term .ct{font-size:12px;color:var(--ink-soft)}
+  .stop.cond .node{background:var(--gold);border-color:var(--gold-deep);box-shadow:0 0 0 3px rgba(255,184,28,.28)}
   .stop .rd{font-family:"IBM Plex Mono",monospace;font-size:8.5px;letter-spacing:.5px;text-transform:uppercase;color:var(--ink-soft);margin-top:14px}
   .stop .ct{font-family:"Anton",sans-serif;font-size:15px;text-transform:uppercase;line-height:1;margin-top:3px}
   .stop .dt{font-family:"IBM Plex Mono",monospace;font-size:9.5px;color:var(--ink-soft);margin-top:2px}
-  .stop.home .ct{color:var(--gold-deep)}
-  .stop.home .rd::after{content:" 🏆";font-size:9px}
+  .stop.cond .ct{color:var(--gold-deep)}
+  .stop.cond .rd::after{content:" ★";font-size:8px;color:var(--gold-deep)}
+  .stop.cond .dt{color:var(--gold-deep)}
+  .ribbon-note{font-size:12.5px;color:var(--ink-soft);margin:0 0 2px;display:flex;gap:7px;align-items:flex-start}
+  .ribbon-note b{color:var(--gold-deep)}
+
+  /* ---------- win/lose branch ---------- */
+  .branch-h{display:flex;align-items:center;gap:10px;margin:22px 0 2px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--ink-soft)}
+  .branch-h::before{content:"";width:18px;height:3px;border-radius:2px;background:repeating-linear-gradient(90deg,var(--navy) 0 8px,transparent 8px 16px)}
+  .branch-h::after{content:"";flex:1;height:3px;border-radius:2px;background:repeating-linear-gradient(90deg,var(--navy) 0 8px,transparent 8px 16px)}
+  .outcome{margin-top:12px;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:#fff;box-shadow:var(--shadow)}
+  .outcome > .obar{display:flex;align-items:center;gap:9px;padding:10px 14px;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.4px;font-weight:600;text-transform:uppercase}
+  .outcome.go > .obar{background:#e7f0e9;color:var(--green);border-bottom:1px solid #bcd9c4}
+  .outcome.out > .obar{background:#f4e6e6;color:#8a2020;border-bottom:1px solid #ddb9b9}
+  .obar .oico{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:13px;flex:0 0 auto}
+  .outcome.go .oico{background:var(--green)}
+  .outcome.out .oico{background:#8a2020}
+  .obar .osub{margin-left:auto;font-weight:400;text-transform:none;letter-spacing:0;font-size:11px;opacity:.85}
+  .outcome .leg{border:0;border-radius:0;box-shadow:none}
+  .outcome .leg + .leg{border-top:1px dashed var(--line)}
 
   /* ---------- leg cards ---------- */
   .legs{margin-top:8px;display:flex;flex-direction:column;gap:14px}
@@ -268,7 +288,7 @@
   <div class="wrap">
     <div class="brand">
       <div class="crest">US</div>
-      <b>Road&nbsp;to&nbsp;MetLife</b>
+      <b>World&nbsp;Cup&nbsp;Planner</b>
     </div>
     <div class="verified">last verified<b>Jun 13, 2026</b></div>
   </div>
@@ -278,8 +298,8 @@
 
   <section class="hero">
     <p class="kicker"><span class="strs">★ ★ ★</span> USMNT · World Cup '26 · From Montclair, NJ</p>
-    <h1>The Knockout<br>Road&nbsp;Trip<span class="met"> ★</span></h1>
-    <p class="sub">One smart travel plan per bracket scenario — fly-vs-drive, where to base, and one-way rentals — all out of <b>Newark (EWR)</b>, always ending home for the <b>Final at MetLife</b>.</p>
+    <h1>Two&nbsp;Games,<br>One&nbsp;Plan<span class="met"> ★</span></h1>
+    <p class="sub">Tickets to USA's <b>first two knockout games</b> — the Round of 32, then the Round of 16 <b>if they advance</b>. Pick a group finish for the plan out of <b>Newark (EWR)</b>, with the move for each way the bracket breaks.</p>
     <span class="flagbar" aria-hidden="true"></span>
   </section>
 
@@ -299,19 +319,19 @@
       <span class="rank">1st</span>
       <span class="ord">Win Group D</span>
       <span class="pill possible">Still possible</span>
-      <span class="where">SF → Seattle → LA → Dallas → home</span>
+      <span class="where">R32 SF Bay → R16 Seattle</span>
     </button>
     <button class="pick ru" role="tab" aria-selected="false" aria-controls="sc-ru" id="tab-ru" data-sc="ru">
       <span class="rank">2nd</span>
       <span class="ord">Runner-up</span>
       <span class="pill possible">Still possible</span>
-      <span class="where">Dallas → Atlanta → KC → Atlanta → home</span>
+      <span class="where">R32 Dallas → R16 Atlanta</span>
     </button>
     <button class="pick third" role="tab" aria-selected="false" aria-controls="sc-third" id="tab-third" data-sc="third">
       <span class="rank">3rd</span>
       <span class="ord">Third place</span>
       <span class="pill possible">If qualified</span>
-      <span class="where">Boston / NJ / KC — TBD</span>
+      <span class="where">R32 Boston / NJ / KC — TBD</span>
     </button>
   </div>
 
@@ -321,15 +341,15 @@
       <h2>If USA wins<br>Group&nbsp;D</h2>
       <span class="tag" style="background:#e7f0e9;color:var(--green);border:1px solid #bcd9c4">Still possible</span>
     </div>
-    <p class="sc-intro">A West Coast swing. Bay Area → Seattle → LA fall inside 10 days — <b>do not fly home in between.</b> Base out west, then one hop to Dallas, then home for the Final.</p>
+    <p class="sc-intro">Game 1 is in the <b>Bay Area</b> (Jul 1). Win it and Game 2 is <b>Seattle</b> five days later — <b>don't fly home in between.</b> Lose it and you're back at Newark the next day.</p>
 
     <div class="ribbon-wrap"><div class="ribbon">
+      <div class="stop term"><span class="node"></span><div class="rd">Depart</div><div class="ct">EWR</div><div class="dt">Jun 30</div></div>
       <div class="stop"><span class="node"></span><div class="rd">R32</div><div class="ct">SF Bay</div><div class="dt">Jul 1</div></div>
-      <div class="stop"><span class="node"></span><div class="rd">R16</div><div class="ct">Seattle</div><div class="dt">Jul 6</div></div>
-      <div class="stop"><span class="node"></span><div class="rd">QF</div><div class="ct">LA</div><div class="dt">Jul 10</div></div>
-      <div class="stop"><span class="node"></span><div class="rd">SF</div><div class="ct">Dallas</div><div class="dt">Jul 14</div></div>
-      <div class="stop home"><span class="node"></span><div class="rd">Final</div><div class="ct">MetLife</div><div class="dt">Jul 19</div></div>
+      <div class="stop cond"><span class="node"></span><div class="rd">R16</div><div class="ct">Seattle</div><div class="dt">Jul 6</div></div>
+      <div class="stop term"><span class="node"></span><div class="rd">Home</div><div class="ct">Montclair</div><div class="dt">Jul 2 or 7</div></div>
     </div></div>
+    <p class="ribbon-note"><span>★</span><span><b>Seattle only if USA win the Round of 32.</b> Lose it and you fly home from the Bay Area after Game 1.</span></p>
 
     <div class="legs" id="legs-win"></div>
   </section>
@@ -340,15 +360,15 @@
       <h2>If USA finish<br>Runner-up</h2>
       <span class="tag" style="background:#e7f0e9;color:var(--green);border:1px solid #bcd9c4">Still possible</span>
     </div>
-    <p class="sc-intro">A spread-out route with Atlanta as a hub (it hosts both your R16 and semi). Gaps are long enough that sleeping in your own bed between legs makes sense.</p>
+    <p class="sc-intro">Game 1 is in <b>Dallas</b> (Jul 3). Win it and Game 2 is <b>Atlanta</b> three days later — two short hops, easy. Lose it and it's a single flight home.</p>
 
     <div class="ribbon-wrap"><div class="ribbon">
+      <div class="stop term"><span class="node"></span><div class="rd">Depart</div><div class="ct">EWR</div><div class="dt">Jul 2</div></div>
       <div class="stop"><span class="node"></span><div class="rd">R32</div><div class="ct">Dallas</div><div class="dt">Jul 3</div></div>
-      <div class="stop"><span class="node"></span><div class="rd">R16</div><div class="ct">Atlanta</div><div class="dt">Jul 6</div></div>
-      <div class="stop"><span class="node"></span><div class="rd">QF</div><div class="ct">KC</div><div class="dt">Jul 11</div></div>
-      <div class="stop"><span class="node"></span><div class="rd">SF</div><div class="ct">Atlanta</div><div class="dt">Jul 15</div></div>
-      <div class="stop home"><span class="node"></span><div class="rd">Final</div><div class="ct">MetLife</div><div class="dt">Jul 19</div></div>
+      <div class="stop cond"><span class="node"></span><div class="rd">R16</div><div class="ct">Atlanta</div><div class="dt">Jul 6</div></div>
+      <div class="stop term"><span class="node"></span><div class="rd">Home</div><div class="ct">Montclair</div><div class="dt">Jul 4 or 7</div></div>
     </div></div>
+    <p class="ribbon-note"><span>★</span><span><b>Atlanta only if USA win the Round of 32.</b> Lose it and you fly home from Dallas after Game 1.</span></p>
 
     <div class="legs" id="legs-ru"></div>
   </section>
@@ -359,15 +379,15 @@
       <h2>If USA finish<br>Third</h2>
       <span class="tag" style="background:var(--amber-bg);color:var(--amber);border:1px solid #e3c98f">Unresolved — verify live</span>
     </div>
-    <p class="sc-intro">Third place only advances if USA is among the <b>8 best third-placed teams</b>, and the bracket slot isn't fixed until every group finishes. The Round of 32 lands at <b>one of three venues</b> — and the later rounds branch from whichever it is. Treat this page as a placeholder until it's settled.</p>
+    <p class="sc-intro">Third place only advances if USA is among the <b>8 best third-placed teams</b>, and the slot isn't fixed until every group finishes. <b>Game 1 (R32)</b> lands at one of three venues; <b>Game 2 (R16)</b>, if they win it, branches from there. Treat this page as a placeholder until it's settled.</p>
 
     <div class="ribbon-wrap"><div class="ribbon">
-      <div class="stop"><span class="node" style="border-color:var(--amber)"></span><div class="rd">R32</div><div class="ct">Bos?/NJ?/KC?</div><div class="dt">~Jun 30</div></div>
-      <div class="stop"><span class="node" style="border-style:dashed"></span><div class="rd">R16</div><div class="ct">TBD</div><div class="dt">—</div></div>
-      <div class="stop"><span class="node" style="border-style:dashed"></span><div class="rd">QF</div><div class="ct">TBD</div><div class="dt">—</div></div>
-      <div class="stop"><span class="node" style="border-style:dashed"></span><div class="rd">SF</div><div class="ct">TBD</div><div class="dt">—</div></div>
-      <div class="stop home"><span class="node"></span><div class="rd">Final</div><div class="ct">MetLife</div><div class="dt">Jul 19</div></div>
+      <div class="stop term"><span class="node"></span><div class="rd">Depart</div><div class="ct">EWR</div><div class="dt">~Jun 29</div></div>
+      <div class="stop"><span class="node" style="border-color:var(--amber)"></span><div class="rd">R32</div><div class="ct">Bos/NJ/KC?</div><div class="dt">~Jun 30</div></div>
+      <div class="stop cond"><span class="node" style="border-style:dashed"></span><div class="rd">R16</div><div class="ct">TBD</div><div class="dt">—</div></div>
+      <div class="stop term"><span class="node"></span><div class="rd">Home</div><div class="ct">Montclair</div><div class="dt">early Jul</div></div>
     </div></div>
+    <p class="ribbon-note"><span>★</span><span><b>Both venues unconfirmed.</b> Re-verify the live bracket once USA's group finish and third-place qualification are known.</span></p>
 
     <div class="legs" id="legs-third"></div>
   </section>
@@ -375,8 +395,8 @@
   <!-- ============ TICKETS ============ -->
   <section class="tickets" id="tickets">
     <h3><span class="ic">✦</span> My tickets</h3>
-    <p>These plans assume you attend <b>every</b> USA knockout match (R32 → Final). If your tickets only cover certain rounds or venues, note it here and skip the legs you're not attending. Saved on this device only.</p>
-    <textarea id="tk-text" spellcheck="false" placeholder="e.g. Confirmed: R32, R16, QF, SF, Final — follows USA. Seat sections / confirmation #s / who's coming…"></textarea>
+    <p>You have tickets to USA's <b>first two knockout games</b> — the Round of 32, then the Round of 16 <b>if they advance</b>. These follow the team, so the R16 seat is void if USA are knocked out in the R32. Note seat details / confirmations below. Saved on this device only.</p>
+    <textarea id="tk-text" spellcheck="false" placeholder="e.g. R32 + R16, follows USA. Sections / confirmation #s / who's coming…"></textarea>
     <div class="tk-row">
       <button class="tk-save" id="tk-save">Save</button>
       <span class="tk-status" id="tk-status"></span>
@@ -385,13 +405,13 @@
 
   <footer>
     <h4>How these plans were built</h4>
-    <p>Drive-vs-fly is chosen per leg from the gap between matches and the geography: short hops and tight turnarounds favor flying; long gaps between far-apart cities favor going home; a genuinely scenic, time-rich leg (Bay Area → Seattle) is worth a one-way rental. Costs are rough sensibilities — <b>budget / mid / splurge</b> — not quotes. July 4 week and mid-July are peak: anything marked <b>book early</b> means it.</p>
+    <p>You hold tickets to USA's <b>first two knockout games</b>, so every scenario branches on the Round-of-32 result: win and there's a second city; lose and it's straight home. Drive-vs-fly is chosen from the gap between the two games and the geography — short hops favor flying, and the one time-rich leg (Bay Area → Seattle) is worth a one-way rental. Costs are rough sensibilities — <b>budget / mid / splurge</b> — not quotes. July 4 week is peak: anything marked <b>book early</b> means it.</p>
     <h4>Verified anchors · last checked Jun 13, 2026</h4>
     <ul>
       <li>USA in Group D; beat Paraguay 4–1 (Jun 12, SoFi/LA); lead the group after MD1.</li>
-      <li>Win path R32: Wed Jul 1, 8pm ET, Levi's Stadium, Santa Clara.</li>
-      <li>Runner-up R32: Fri Jul 3, 2pm ET, AT&T Stadium, Arlington (Dallas).</li>
-      <li>Final: Sun Jul 19, MetLife Stadium, East Rutherford, NJ.</li>
+      <li>Win → R32: Wed Jul 1, 8pm ET, Levi's Stadium, Santa Clara · R16: Mon Jul 6, Lumen Field, Seattle.</li>
+      <li>Runner-up → R32: Fri Jul 3, 2pm ET, AT&T Stadium, Arlington · R16: Mon Jul 6, Mercedes-Benz, Atlanta.</li>
+      <li>Third → R32 venue unconfirmed (Foxborough / MetLife / Arrowhead); R16 branches from there.</li>
     </ul>
     <p class="legal">Schedule, kickoff times and bracket are subject to FIFA and to USA's results. Re-verify the live bracket before booking — especially the Third-place page. This is a personal reference, not affiliated with FIFA or US Soccer.</p>
   </footer>
@@ -403,225 +423,173 @@
 const cost = n => `<span class="cost" aria-label="cost ${n} of 3">${[1,2,3].map(i=>`<i class="${i<=n?'on':''}"></i>`).join('')}</span>`;
 
 const DATA = {
-  win: [
-    {
-      rd:"Round of 32", city:"SF Bay Area", when:"Wed Jul 1 · 8:00pm ET", venue:"Levi's Stadium, Santa Clara, CA",
-      move:`<b>Fly EWR → San Jose (SJC) or SFO.</b> This is the start of a 10-day West Coast run — land out west and stay there.`,
+  win: {
+    r32: {
+      rd:"Round of 32 · Game 1", city:"SF Bay Area", when:"Wed Jul 1 · 8:00pm ET", venue:"Levi's Stadium, Santa Clara, CA",
+      move:`<b>Fly EWR → San Jose (SJC) or SFO</b> and rent a car. This is the one game you're guaranteed — everything after rides on the result.`,
       flags:[["book","Book EWR→Bay flight early"]],
       body:`
         <div class="opt"><h4><span class="rec-chip">Get there</span> Fly the long leg</h4>
-        <p>Nonstop EWR→SFO is ~6.5h (United). <b>SJC (San Jose)</b> is closest to Levi's — fewer nonstops but skips the 40-min drive down from SF. Arrive Jun 30 so a night game on the 1st is relaxed.</p></div>
+        <p>Nonstop EWR→SFO ~6.5h (United). <b>SJC (San Jose)</b> is closest to Levi's and skips the drive down from the city. Land Jun 30 so a night game on the 1st stays relaxed.</p></div>
         <div class="opt"><h4><span class="rec-chip">Car</span> Pick up at the airport</h4>
-        <p>Rent here and <b>keep it</b> — you'll want wheels for the Seattle decision. Stay in <b>Santa Clara / San Jose</b>, not SF city; the stadium is in the South Bay.</p></div>
+        <p>Rent here. If USA advance you'll decide whether to drive the coast to Seattle; if not, you just drop it back. Stay in <b>Santa Clara / San Jose</b> (South Bay), not SF city.</p></div>
         <ul class="specs">
           <li><span class="k">Airport</span><span class="v">SJC (best) / SFO</span></li>
           <li><span class="k">Flight</span><span class="v">~6.5h nonstop from EWR</span></li>
-          <li><span class="k">Car</span><span class="v">Yes — pick up, keep it</span></li>
+          <li><span class="k">Car</span><span class="v">Yes — pick up here</span></li>
           <li><span class="k">Nights</span><span class="v">2 · Jun 30–Jul 2, South Bay</span></li>
-          <li class="full"><span class="k">Cost feel</span><span class="v">${cost(2)} Mid — flight is the spend; South Bay hotels reasonable</span></li>
+          <li class="full"><span class="k">Cost feel</span><span class="v">${cost(2)} Mid — the flight is the spend</span></li>
         </ul>`
     },
-    {
-      rd:"Round of 16", city:"Seattle", when:"Mon Jul 6 · ~8:00pm ET", venue:"Lumen Field, Seattle, WA",
-      move:`<b>Don't fly home — drive the coast.</b> 5 free days: take a one-way rental up the Pacific Coast over 2–3 days. Prefer time in Seattle? The 2h flight is the easy alt.`,
-      flags:[["warn","5-day gap — the scenic centerpiece"],["book","One-way drop + July 4 lodging: book now"]],
+    go: {
+      rd:"Round of 16 · Game 2", city:"Seattle", when:"Mon Jul 6 · ~8:00pm ET", venue:"Lumen Field, Seattle, WA",
+      move:`<b>Don't fly home — head north.</b> 5 free days: a one-way rental up the Pacific Coast (the highlight of the trip) or a quick 2h flight. Then fly home <b>SEA → EWR</b>.`,
+      flags:[["warn","5-day gap — the scenic centerpiece"],["book","One-way drop + July 4 rooms: book now"]],
       body:`
-        <div class="opt"><h4><span class="rec-chip">Recommended</span> One-way rental · scenic coast drive</h4>
-        <p>~800 mi / 13–14h split over three easy days. The drive <em>is</em> the trip — redwoods, the Oregon coast, then Seattle.</p>
+        <div class="opt"><h4><span class="rec-chip">Recommended</span> One-way rental · coast drive</h4>
+        <p>~800 mi / 13–14h split over three easy days — redwoods, the Oregon coast, then Seattle.</p>
         <ul class="stops">
-          <li><span class="d">Jul 2</span> Bay Area → <b>Redwood Coast</b> (Avenue of the Giants, Eureka), ~5h. Overnight Eureka/Arcata.</li>
-          <li><span class="d">Jul 3–4</span> → <b>Oregon Coast</b> via US-101 (Cannon Beach / Haystack Rock) or <b>Portland</b>, ~6–7h. Overnight.</li>
-          <li><span class="d">Jul 4–5</span> → <b>Seattle</b>, ~3h from Portland. Settle a day before the match.</li>
+          <li><span class="d">Jul 2</span> Bay Area → <b>Redwood Coast</b> (Avenue of the Giants, Eureka), ~5h. Overnight.</li>
+          <li><span class="d">Jul 3–4</span> → <b>Oregon Coast</b> (Cannon Beach / Haystack Rock) or <b>Portland</b>, ~6–7h. Overnight.</li>
+          <li><span class="d">Jul 4–5</span> → <b>Seattle</b>, ~3h from Portland. Settle a day before kickoff.</li>
         </ul></div>
         <div class="opt"><h4><span class="alt-chip">Alternative</span> Drop the car, fly up</h4>
-        <p>Return the car in the Bay Area and fly <b>SFO/SJC→SEA ~2.5h</b> (Alaska/Delta/United, frequent). Do this if you'd rather bank 4 nights in Seattle than drive.</p></div>
+        <p>Return it in the Bay Area and fly <b>SFO/SJC→SEA ~2.5h</b> (Alaska/Delta/United). Do this for more Seattle time and less driving.</p></div>
+        <div class="opt"><h4><span class="alt-chip">Then home</span> Fly out of Seattle</h4>
+        <p>After the match, <b>SEA → EWR ~5.5h</b> nonstop (Alaska/United). Home to Montclair.</p></div>
         <ul class="specs">
-          <li><span class="k">Airport</span><span class="v">Drive, or SEA (~2.5h)</span></li>
+          <li><span class="k">Getting up</span><span class="v">Drive, or SEA (~2.5h)</span></li>
           <li><span class="k">Car</span><span class="v">One-way SF→SEA (drop fee)</span></li>
-          <li><span class="k">Nights</span><span class="v">2–3 in Seattle + 2 en route</span></li>
+          <li><span class="k">Nights</span><span class="v">2–3 Seattle + 2 en route</span></li>
           <li><span class="k">Stay</span><span class="v">Downtown / Pioneer Sq — walk to Lumen</span></li>
-          <li class="full"><span class="k">Cost feel</span><span class="v">${cost(3)} Splurge-ish — one-way fee + July 4 peak Seattle rooms</span></li>
+          <li class="full"><span class="k">Cost feel</span><span class="v">${cost(3)} Splurge-ish — one-way fee + July 4 peak rooms</span></li>
         </ul>`
     },
-    {
-      rd:"Quarterfinal", city:"Los Angeles", when:"Fri Jul 10 · 3:00pm ET (noon local)", venue:"SoFi Stadium, Inglewood, CA",
-      move:`<b>Fly SEA → LAX (~2.5h).</b> Driving is 17h — not a question. Frequent nonstops; go down a couple days early.`,
-      flags:[["warn","Noon local kickoff — beat the traffic"]],
-      body:`
-        <div class="opt"><h4><span class="rec-chip">Get there</span> Short flight south</h4>
-        <p>SEA→LAX nonstop ~2.5h, all day long. Base near <b>Inglewood / El Segundo / LAX</b> — SoFi sits right by the airport, so you're close on arrival and for departure.</p></div>
-        <div class="opt"><h4><span class="alt-chip">On the ground</span> Car optional</h4>
-        <p>LA is sprawl, but SoFi has rideshare + the K Line nearby. A rental helps if you'll roam; skip it if you're staying local.</p></div>
-        <ul class="specs">
-          <li><span class="k">Airport</span><span class="v">LAX (walk-distance to SoFi area)</span></li>
-          <li><span class="k">Flight</span><span class="v">~2.5h from SEA</span></li>
-          <li><span class="k">Nights</span><span class="v">3 · near Inglewood/LAX</span></li>
-          <li><span class="k">Car</span><span class="v">Optional</span></li>
-          <li class="full"><span class="k">Cost feel</span><span class="v">${cost(2)} Mid — noon kickoff means an early, low-key match day</span></li>
-        </ul>`
-    },
-    {
-      rd:"Semifinal", city:"Dallas", when:"Tue Jul 14 · 3:00pm ET (2pm local)", venue:"AT&T Stadium, Arlington, TX",
-      move:`<b>Fly LAX → DFW (~3.5h).</b> Last stop before home. Stay in Arlington, right by the stadium.`,
-      flags:[["book","Semi tickets + DFW flight: high demand"]],
-      body:`
-        <div class="opt"><h4><span class="rec-chip">Get there</span> One hop east</h4>
-        <p>LAX→DFW nonstop ~3.5h (American hub) — or Love Field (DAL). Stay in <b>Arlington</b>, between Dallas and Fort Worth, where AT&T Stadium actually is.</p></div>
-        <div class="opt"><h4><span class="alt-chip">Heads up</span> Texas in July</h4>
-        <p>It's brutal outside, but AT&T is climate-controlled with a retractable roof — the match itself is comfortable. Rideshare or drive; Arlington transit is thin.</p></div>
-        <ul class="specs">
-          <li><span class="k">Airport</span><span class="v">DFW (or DAL)</span></li>
-          <li><span class="k">Flight</span><span class="v">~3.5h from LAX</span></li>
-          <li><span class="k">Nights</span><span class="v">2 · Arlington</span></li>
-          <li><span class="k">Car</span><span class="v">Yes (or rideshare)</span></li>
-          <li class="full"><span class="k">Cost feel</span><span class="v">${cost(2)} Mid — then fly DFW→EWR home for recovery</span></li>
-        </ul>`
-    },
-    {
-      rd:"Final", city:"MetLife", when:"Sun Jul 19 · 3:00pm ET", venue:"MetLife Stadium, East Rutherford, NJ", home:true,
-      move:`<b>Home game.</b> Fly DFW→EWR after the semi, sleep in your own bed, recover. No travel — just get to East Rutherford.`,
+    out: {
+      rd:"If USA lose the R32", city:"Head home", when:"Thu Jul 2", venue:"Bay Area → Newark (EWR) → Montclair",
+      move:`<b>The run's over — fly home.</b> Drop the rental at the Bay Area airport and fly <b>SFO/SJC → EWR</b> (~5.5h). No Seattle this time.`,
       flags:[],
       body:`
-        <div class="opt"><h4><span class="rec-chip">Match day</span> Just transit</h4>
-        <p>From Montclair, MetLife is ~12 mi / 20–30 min drive. Or take <b>NJ Transit</b> to Secaucus and the game-day Meadowlands rail shuttle. Park-and-walk if you'd rather drive.</p></div>
+        <div class="opt"><h4><span class="rec-chip">Get home</span> One flight east</h4>
+        <p>Fly home Jul 2, ~5.5h nonstop. You'll have had two nights in the South Bay and a marquee opener.</p></div>
+        <div class="opt"><h4><span class="alt-chip">Tickets</span> The R16 seat</h4>
+        <p>Your Round-of-16 ticket follows USA — if they're out, handle resale/refund through the <b>FWC26</b> app.</p></div>
         <ul class="specs">
-          <li><span class="k">From home</span><span class="v">~20–30 min</span></li>
-          <li><span class="k">Transit</span><span class="v">Meadowlands rail via Secaucus</span></li>
-          <li><span class="k">Nights</span><span class="v">0 — you're home</span></li>
-          <li><span class="k">Car</span><span class="v">Optional</span></li>
-          <li class="full"><span class="k">Cost feel</span><span class="v">${cost(1)} Just parking or rail fare. ~5 days to recover after Dallas.</span></li>
+          <li><span class="k">Airport</span><span class="v">SFO / SJC → EWR</span></li>
+          <li><span class="k">Flight</span><span class="v">~5.5h nonstop</span></li>
+          <li><span class="k">Nights</span><span class="v">0 more — head home</span></li>
+          <li class="full"><span class="k">Cost feel</span><span class="v">${cost(1)} Just the return flight</span></li>
         </ul>`
     }
-  ],
+  },
 
-  ru: [
-    {
-      rd:"Round of 32", city:"Dallas", when:"Fri Jul 3 · 2:00pm ET (1pm local)", venue:"AT&T Stadium, Arlington, TX",
-      move:`<b>Fly EWR → DFW (~4h).</b> Arrive Jul 2. Stay in Arlington by the stadium.`,
+  ru: {
+    r32: {
+      rd:"Round of 32 · Game 1", city:"Dallas", when:"Fri Jul 3 · 2:00pm ET", venue:"AT&T Stadium, Arlington, TX",
+      move:`<b>Fly EWR → DFW (~4h)</b>, arrive Jul 2, stay in Arlington by the stadium. Game 1 sets the rest.`,
       flags:[["book","July 4 weekend flights — book early"]],
       body:`
         <div class="opt"><h4><span class="rec-chip">Get there</span> Straight shot</h4>
-        <p>EWR→DFW nonstop ~4h (United/American). 1pm local kickoff in Texas heat, but AT&T is indoor/AC. Stay <b>Arlington</b> near the stadium.</p></div>
+        <p>EWR→DFW nonstop ~4h (United/American). 1pm local kickoff in Texas heat, but AT&T is indoor/AC. Stay <b>Arlington</b>, near the stadium.</p></div>
+        <div class="opt"><h4><span class="alt-chip">On the ground</span> Car or rideshare</h4>
+        <p>Arlington transit is thin — rent a car or plan on rideshare to the stadium.</p></div>
         <ul class="specs">
-          <li><span class="k">Airport</span><span class="v">DFW</span></li>
+          <li><span class="k">Airport</span><span class="v">DFW (or DAL)</span></li>
           <li><span class="k">Flight</span><span class="v">~4h nonstop from EWR</span></li>
           <li><span class="k">Nights</span><span class="v">2 · Jul 2–4, Arlington</span></li>
           <li><span class="k">Car</span><span class="v">Yes (or rideshare)</span></li>
-          <li class="full"><span class="k">Cost feel</span><span class="v">${cost(2)} Mid — July 4 weekend, so lock flights early</span></li>
+          <li class="full"><span class="k">Cost feel</span><span class="v">${cost(2)} Mid — lock flights early for the holiday</span></li>
         </ul>`
     },
-    {
-      rd:"Round of 16", city:"Atlanta", when:"Mon Jul 6 · 12:00pm ET", venue:"Mercedes-Benz Stadium, Atlanta, GA",
-      move:`<b>Fly DFW → ATL (~2h).</b> Easy, frequent (Delta hub). Mercedes-Benz is downtown and MARTA-accessible — you may not need a car at all.`,
+    go: {
+      rd:"Round of 16 · Game 2", city:"Atlanta", when:"Mon Jul 6 · 12:00pm ET", venue:"Mercedes-Benz Stadium, Atlanta, GA",
+      move:`<b>Fly DFW → ATL (~2h)</b> — short hop, no car needed (MARTA + walk). After the match, fly home <b>ATL → EWR</b> (~2.5h).`,
       flags:[["warn","Noon kickoff — arrive the day before"]],
       body:`
         <div class="opt"><h4><span class="rec-chip">Get there</span> Quick hop east</h4>
-        <p>DFW/DAL→ATL nonstop ~2h, constant departures. Driving is 12h — skip it. Get in Jul 4/5 for a noon match on the 6th.</p></div>
+        <p>DFW/DAL→ATL nonstop ~2h, constant departures (Delta hub). Driving is 12h — skip it. Get in Jul 4/5 for a noon match on the 6th.</p></div>
         <div class="opt"><h4><span class="alt-chip">On the ground</span> No car needed</h4>
-        <p>Stadium is downtown by GWCC/Vine City <b>MARTA</b> stations and walkable from downtown hotels. Stay downtown; skip the rental.</p></div>
+        <p>Mercedes-Benz is downtown by the GWCC/Vine City <b>MARTA</b> stops and walkable from downtown hotels. Stay downtown, skip the rental.</p></div>
+        <div class="opt"><h4><span class="alt-chip">Then home</span> Out of Atlanta</h4>
+        <p>After the match, <b>ATL → EWR ~2.5h</b> nonstop. Two short flights bookend the whole trip.</p></div>
         <ul class="specs">
           <li><span class="k">Airport</span><span class="v">ATL</span></li>
           <li><span class="k">Flight</span><span class="v">~2h from DFW</span></li>
           <li><span class="k">Nights</span><span class="v">2 · downtown Atlanta</span></li>
           <li><span class="k">Car</span><span class="v">No — MARTA + walk</span></li>
-          <li class="full"><span class="k">Cost feel</span><span class="v">${cost(2)} Mid — note: Atlanta hosts your semi too, so you'll be back</span></li>
+          <li class="full"><span class="k">Cost feel</span><span class="v">${cost(2)} Mid — short hops both ways keep it cheap</span></li>
         </ul>`
     },
-    {
-      rd:"Quarterfinal", city:"Kansas City", when:"Sat Jul 11 · 9:00pm ET (8pm local)", venue:"Arrowhead Stadium, Kansas City, MO",
-      move:`<b>Go home first.</b> 5-day gap, and KC isn't near Atlanta or anything else — fly home to NJ to reset, then fly out to KC.`,
-      flags:[["warn","5-day gap, no geographic cluster"]],
+    out: {
+      rd:"If USA lose the R32", city:"Head home", when:"Sat Jul 4", venue:"Dallas → Newark (EWR) → Montclair",
+      move:`<b>Fly home from Dallas</b> — DFW → EWR (~4h). No Atlanta. Book the return early too — it's July 4.`,
+      flags:[["book","July 4 — book the return early"]],
       body:`
-        <div class="opt"><h4><span class="rec-chip">Recommended</span> Reset at home, then out to KC</h4>
-        <p>Fly <b>ATL→EWR ~2.5h</b> after the R16 (Jul 6/7), home Jul 7–9 (laundry, real bed), then <b>EWR→MCI ~3h</b> on Jul 10 for the Saturday match. KC is a flight from anywhere, so home wins on comfort.</p></div>
-        <div class="opt"><h4><span class="alt-chip">Alternative</span> Stay south</h4>
-        <p>If you'd rather not backtrack, base in Atlanta or take a side trip and fly straight to KC — but there's no travel-time saving, just less time at home.</p></div>
+        <div class="opt"><h4><span class="rec-chip">Get home</span> One flight back</h4>
+        <p>Return the rental and fly <b>DFW → EWR ~4h</b> nonstop on Jul 4. Two nights in Texas, then home.</p></div>
+        <div class="opt"><h4><span class="alt-chip">Tickets</span> The R16 seat</h4>
+        <p>Your Round-of-16 ticket follows USA — if they're out, handle resale/refund through the <b>FWC26</b> app.</p></div>
         <ul class="specs">
-          <li><span class="k">Airport</span><span class="v">MCI (Kansas City)</span></li>
-          <li><span class="k">Flight</span><span class="v">~3h from EWR</span></li>
-          <li><span class="k">Nights</span><span class="v">1–2 · downtown KC / Independence</span></li>
-          <li><span class="k">Car</span><span class="v">Yes — Arrowhead has thin transit</span></li>
-          <li class="full"><span class="k">Cost feel</span><span class="v">${cost(2)} Mid — 8pm Saturday kickoff, big tailgate scene. Get the BBQ.</span></li>
-        </ul>`
-    },
-    {
-      rd:"Semifinal", city:"Atlanta", when:"Wed Jul 15 · 3:00pm ET", venue:"Mercedes-Benz Stadium, Atlanta, GA",
-      move:`<b>Fly KC → ATL (~2h) direct.</b> Only 4 days, and you already know the city — no need to route through home.`,
-      flags:[],
-      body:`
-        <div class="opt"><h4><span class="rec-chip">Get there</span> Straight to Atlanta</h4>
-        <p>MCI→ATL nonstop ~2h. Back downtown — same area as your R16, so you're on familiar ground. A couple of low-key days, then the semi.</p></div>
-        <div class="opt"><h4><span class="alt-chip">Alternative</span> Detour home</h4>
-        <p>Prefer your own bed? KC→EWR→ATL works too, but it's two flights for the same window. Direct is cleaner.</p></div>
-        <ul class="specs">
-          <li><span class="k">Airport</span><span class="v">ATL</span></li>
-          <li><span class="k">Flight</span><span class="v">~2h from MCI</span></li>
-          <li><span class="k">Nights</span><span class="v">2 · downtown Atlanta</span></li>
-          <li><span class="k">Car</span><span class="v">No — MARTA + walk</span></li>
-          <li class="full"><span class="k">Cost feel</span><span class="v">${cost(2)} Mid — then fly ATL→EWR home for the Final</span></li>
-        </ul>`
-    },
-    {
-      rd:"Final", city:"MetLife", when:"Sun Jul 19 · 3:00pm ET", venue:"MetLife Stadium, East Rutherford, NJ", home:true,
-      move:`<b>Home game.</b> Fly ATL→EWR after the semi, recover at home, then just get to East Rutherford.`,
-      flags:[],
-      body:`
-        <div class="opt"><h4><span class="rec-chip">Match day</span> Just transit</h4>
-        <p>From Montclair, MetLife is ~12 mi / 20–30 min drive, or <b>NJ Transit</b> to Secaucus + the Meadowlands game-day shuttle. No lodging, no flights — you're home.</p></div>
-        <ul class="specs">
-          <li><span class="k">From home</span><span class="v">~20–30 min</span></li>
-          <li><span class="k">Transit</span><span class="v">Meadowlands rail via Secaucus</span></li>
-          <li><span class="k">Nights</span><span class="v">0 — you're home</span></li>
-          <li><span class="k">Car</span><span class="v">Optional</span></li>
-          <li class="full"><span class="k">Cost feel</span><span class="v">${cost(1)} Parking or rail. ~4 days to recover after Atlanta.</span></li>
+          <li><span class="k">Airport</span><span class="v">DFW → EWR</span></li>
+          <li><span class="k">Flight</span><span class="v">~4h nonstop</span></li>
+          <li><span class="k">Nights</span><span class="v">0 more — head home</span></li>
+          <li class="full"><span class="k">Cost feel</span><span class="v">${cost(1)} Just the return flight</span></li>
         </ul>`
     }
-  ],
+  },
 
-  third: [
-    {
-      rd:"Round of 32", city:"Venue TBD", when:"~Jun 30 · time TBD", venue:"Foxborough (Boston) · MetLife (NJ) · or Arrowhead (KC)",
-      move:`<b>Depends on the bracket.</b> A Group-D third-place team can land in one of three R32 slots. Here's the travel read for each — confirm which once qualification is set.`,
+  third: {
+    r32: {
+      rd:"Round of 32 · Game 1", city:"Venue TBD", when:"~Jun 30 · time TBD", venue:"Foxborough (Boston) · MetLife (NJ) · or Arrowhead (KC)",
+      move:`<b>Depends on the bracket.</b> A Group-D third-place team can land in one of three R32 slots — here's the travel read for each. Confirm which once qualification is set.`,
       flags:[["warn","Not fixed until all groups finish"]],
       body:`
         <div class="opt"><h4><span class="alt-chip">If</span> Gillette Stadium · Foxborough, MA</h4>
-        <p><b>Drive it.</b> ~215 mi / ~3.5–4h from Montclair up I-95 — take your own car and gear. (Or EWR→BOS ~1.5h + 40-min drive south to Foxborough.) 1 night near Foxborough/Providence.</p></div>
+        <p><b>Drive it.</b> ~215 mi / ~3.5–4h from Montclair up I-95 — your own car and gear. (Or EWR→BOS ~1.5h + 40-min drive south.) 1 night near Foxborough/Providence.</p></div>
         <div class="opt"><h4><span class="rec-chip">Best case</span> MetLife · East Rutherford, NJ</h4>
-        <p><b>Home game.</b> No travel — ~20–30 min from Montclair. Same drill as the Final.</p></div>
+        <p><b>Home game.</b> No travel — ~20–30 min from Montclair.</p></div>
         <div class="opt"><h4><span class="alt-chip">If</span> Arrowhead · Kansas City, MO</h4>
         <p><b>Fly EWR→MCI ~3h</b>, rent a car (thin transit at Arrowhead). 1–2 nights downtown KC.</p></div>
         <ul class="specs">
           <li><span class="k">Boston</span><span class="v">Drive ~3.5–4h</span></li>
           <li><span class="k">MetLife</span><span class="v">Home — no travel</span></li>
           <li><span class="k">Kansas City</span><span class="v">Fly ~3h + car</span></li>
-          <li><span class="k">Nights</span><span class="v">0–2 depending on venue</span></li>
-          <li class="full"><span class="k">Cost feel</span><span class="v">${cost(2)} Varies — cheapest if it's MetLife, priciest if KC</span></li>
+          <li class="full"><span class="k">Cost feel</span><span class="v">${cost(2)} Varies — cheapest at MetLife, priciest at KC</span></li>
         </ul>`
     },
-    {
-      rd:"Round of 16 → Final", city:"Branches from R32", when:"Early–mid July", venue:"Resolve from the live bracket",
-      move:`<b>Hold for now.</b> Every later round depends on which R32 slot USA fills, so there's no single route to lock yet.`,
-      flags:[["book","Re-verify the bracket before booking anything"]],
+    go: {
+      rd:"Round of 16 · Game 2 · if they win", city:"Branches from Game 1", when:"Early July · TBD", venue:"Resolve from the live bracket",
+      move:`<b>Hold for now.</b> Game 2's city depends on which R32 slot USA fills — it could be close to home or another flight.`,
+      flags:[["book","Re-verify the bracket before booking"]],
       body:`
         <div class="opt"><h4>What to do</h4>
-        <p>Once USA's third-place qualification and slot are confirmed by FIFA, this path resolves to a fixed sequence of cities — the same way the Win and Runner-up pages already have. Check the official bracket, then I'll fill these legs in with the same fly-vs-drive treatment.</p>
-        <p>Whatever the path, it still ends at <b>MetLife on Jul 19</b> — a home game.</p></div>
+        <p>Once USA's third-place qualification and slot are confirmed by FIFA, this resolves to a single city — and I'll fill it in with the same fly-vs-drive treatment as the other scenarios.</p></div>
         <ul class="specs">
           <li class="full"><span class="k">Status</span><span class="v">Awaiting group results + third-place ranking</span></li>
-          <li class="full"><span class="k">Constant</span><span class="v">Final is always MetLife — home, no travel</span></li>
+        </ul>`
+    },
+    out: {
+      rd:"If USA lose the R32", city:"Head home", when:"Early July", venue:"From wherever Game 1 was",
+      move:`<b>Straight home.</b> If Game 1 was MetLife you're already here; if Boston, drive ~3.5h; if KC, fly home ~3h.`,
+      flags:[],
+      body:`
+        <div class="opt"><h4><span class="rec-chip">Get home</span> Depends on the venue</h4>
+        <p>MetLife → you're home already. Foxborough → drive ~3.5–4h down I-95. Kansas City → drop the rental and fly <b>MCI → EWR ~3h</b>.</p></div>
+        <ul class="specs">
+          <li class="full"><span class="k">Cost feel</span><span class="v">${cost(1)} Nothing extra at MetLife; a flight if it's KC</span></li>
         </ul>`
     }
-  ]
+  }
 };
 
-/* ---------------- render legs ---------------- */
+/* ---------------- render ---------------- */
 const chevSvg = `<svg width="11" height="7" viewBox="0 0 11 7" fill="none"><path d="M1 1l4.5 4.5L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>`;
 function flagHtml(f){return f.map(([t,txt])=>`<span class="flag ${t}">${t==='warn'?'▲':'◷'} ${txt}</span>`).join('')}
 function legHtml(L){
   return `<details class="leg">
     <summary>
       <div class="leg-top"><span class="rd-tag">${L.rd}</span><span class="leg-when">${L.when}</span></div>
-      <div class="leg-city">${L.city}${L.home?'<span class="home-badge">Home</span>':''}</div>
+      <div class="leg-city">${L.city}</div>
       <div class="leg-venue">${L.venue}</div>
       <div class="move"><span class="mlab">Move</span><span>${L.move}</span></div>
       ${L.flags&&L.flags.length?`<div class="flags">${flagHtml(L.flags)}</div>`:''}
@@ -630,8 +598,22 @@ function legHtml(L){
     <div class="body">${L.body}</div>
   </details>`;
 }
+function outcomeHtml(kind, leg){
+  const go = kind==='go';
+  return `<div class="outcome ${go?'go':'out'}">
+    <div class="obar"><span class="oico">${go?'✓':'✕'}</span>${go?'USA advance':'USA eliminated'}<span class="osub">${go?'on to Game 2':'trip ends after Game 1'}</span></div>
+    ${legHtml(leg)}
+  </div>`;
+}
+function renderScenario(k){
+  const s = DATA[k];
+  return legHtml(s.r32)
+    + `<div class="branch-h">After Game 1 — two outcomes</div>`
+    + outcomeHtml('go', s.go)
+    + outcomeHtml('out', s.out);
+}
 for(const k of ['win','ru','third']){
-  document.getElementById('legs-'+k).innerHTML = DATA[k].map(legHtml).join('');
+  document.getElementById('legs-'+k).innerHTML = renderScenario(k);
 }
 
 /* ---------------- scenario switching ---------------- */

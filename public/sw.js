@@ -1,5 +1,5 @@
-// Offline-first cache so the plan is readable on spotty connections while traveling.
-const CACHE = 'roadtometlife-v1';
+// Offline support that still updates: network-first for the page, cache-first for static assets.
+const CACHE = 'roadtometlife-v3';
 const ASSETS = [
   './',
   './index.html',
@@ -20,16 +20,32 @@ self.addEventListener('activate', e => {
   );
 });
 
-// Cache-first for our own assets; network fallback for everything else (e.g. fonts).
 self.addEventListener('fetch', e => {
-  if (e.request.method !== 'GET') return;
+  const req = e.request;
+  if (req.method !== 'GET') return;
+
+  const isPage = req.mode === 'navigate' || req.destination === 'document';
+
+  if (isPage) {
+    // Network-first: always show the latest page when online, fall back to cache offline.
+    e.respondWith(
+      fetch(req).then(res => {
+        const copy = res.clone();
+        caches.open(CACHE).then(c => c.put('./index.html', copy));
+        return res;
+      }).catch(() => caches.match(req).then(hit => hit || caches.match('./index.html')))
+    );
+    return;
+  }
+
+  // Cache-first for everything else (icons, manifest, fonts).
   e.respondWith(
-    caches.match(e.request).then(hit => hit || fetch(e.request).then(res => {
+    caches.match(req).then(hit => hit || fetch(req).then(res => {
       const copy = res.clone();
-      if (res.ok && e.request.url.startsWith(self.location.origin)) {
-        caches.open(CACHE).then(c => c.put(e.request, copy));
+      if (res.ok && req.url.startsWith(self.location.origin)) {
+        caches.open(CACHE).then(c => c.put(req, copy));
       }
       return res;
-    }).catch(() => caches.match('./index.html')))
+    }).catch(() => undefined))
   );
 });
