@@ -19,7 +19,7 @@ Pick **1st / 2nd / 3rd** and you get the R32 plan plus both outcomes, each as a 
 
 ## Tech
 
-Single self-contained `public/index.html` (inline CSS/JS, no build step, no backend). Installable PWA with a network-first service worker so it updates when online and stays readable offline. Mobile-first, high-contrast for sunlight, native `<details>` collapsibles, Team USA / World Cup styling.
+Single self-contained `public/index.html` (inline CSS/JS, no build step, no backend). Installable PWA with a network-first service worker so it updates when online and stays readable offline. Mobile-first, high-contrast for sunlight, native `<details>` collapsibles. Refined editorial styling — Newsreader serif headlines, IBM Plex Mono labels, navy + red on warm paper.
 
 ## Run / deploy
 
@@ -32,3 +32,5 @@ firebase deploy --only hosting
 ```
 
 Live at **https://world-cup-planner.web.app**. Editable "My tickets" notes are saved in `localStorage` on the device only.
+
+See [`NOTES.md`](NOTES.md) for the verified data anchors, sources, design decisions, and the open to-do list.
